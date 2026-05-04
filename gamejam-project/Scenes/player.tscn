@@ -1,13 +1,14 @@
-[gd_scene load_steps=6 format=3 uid="uid://ojqkh1fp1khg"]
+[gd_scene load_steps=7 format=3 uid="uid://ojqkh1fp1khg"]
 
-[ext_resource type="Texture2D" uid="uid://dl06kvnqy1i8v" path="res://Sprites/avaruusolio.png" id="1_50vx4"]
+[ext_resource type="Script" uid="uid://dms58xbf5y0s2" path="res://Code/player.gd" id="1_cvnsp"]
+[ext_resource type="Texture2D" uid="uid://dl06kvnqy1i8v" path="res://Sprites/avaruusolio.png" id="2_6t5aa"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_reh1e"]
-atlas = ExtResource("1_50vx4")
+atlas = ExtResource("2_6t5aa")
 region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_u5ccc"]
-atlas = ExtResource("1_50vx4")
+atlas = ExtResource("2_6t5aa")
 region = Rect2(0, 32, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ewoov"]
@@ -27,7 +28,8 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r47xg"]
 size = Vector2(24, 31)
 
-[node name="Spacefrog" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_cvnsp")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_ewoov")
