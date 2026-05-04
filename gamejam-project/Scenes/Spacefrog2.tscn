@@ -1,3 +1,55 @@
-[gd_scene format=3 uid="uid://cxxgrlyfxvlor"]
+[gd_scene load_steps=8 format=3 uid="uid://cxxgrlyfxvlor"]
+
+[ext_resource type="Texture2D" uid="uid://c857kjy84w70b" path="res://Sprites/avaruusolio_vol2.png" id="1_jw1d3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0jcpg"]
+atlas = ExtResource("1_jw1d3")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jrj18"]
+atlas = ExtResource("1_jw1d3")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fpmn5"]
+atlas = ExtResource("1_jw1d3")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e1vl1"]
+atlas = ExtResource("1_jw1d3")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4lj73"]
+atlas = ExtResource("1_jw1d3")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6cd4k"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0jcpg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jrj18")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fpmn5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e1vl1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4lj73")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Spacefrog2" type="Node2D"]
+
+[node name="Spacefrog2" type="CharacterBody2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Spacefrog2"]
+position = Vector2(36, 56)
+sprite_frames = SubResource("SpriteFrames_6cd4k")
+frame_progress = 0.06574347
