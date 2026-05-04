@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://rnk4rcy4lknc"]
+
+[ext_resource type="PackedScene" uid="uid://ojqkh1fp1khg" path="res://Scenes/spacefrog.tscn" id="1_vk57k"]
+
+[node name="Level1" type="Node2D"]
+
+[node name="Spacefrog" parent="." instance=ExtResource("1_vk57k")]
