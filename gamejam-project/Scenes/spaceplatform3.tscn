@@ -6,25 +6,27 @@
 size = Vector2(91, 13)
 
 [node name="Spaceplatform3" type="Area2D"]
+collision_layer = 4
+collision_mask = 0
 
 [node name="Lautta" type="Sprite2D" parent="."]
-position = Vector2(33, 24)
+position = Vector2(-29, 0)
 texture = ExtResource("1_vpuvc")
 region_enabled = true
 region_rect = Rect2(0, 7.3751926, 31.503971, 13.239759)
 
 [node name="Lautta2" type="Sprite2D" parent="."]
-position = Vector2(62, 24)
+position = Vector2(1, 0)
 texture = ExtResource("1_vpuvc")
 region_enabled = true
 region_rect = Rect2(0, 7.3751926, 31.503971, 13.239759)
 
 [node name="Lautta3" type="Sprite2D" parent="."]
-position = Vector2(92, 24)
+position = Vector2(31, 0)
 texture = ExtResource("1_vpuvc")
 region_enabled = true
 region_rect = Rect2(0, 7.3751926, 31.503971, 13.239759)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(62.5, 23.5)
+position = Vector2(1, 0)
 shape = SubResource("RectangleShape2D_vpuvc")

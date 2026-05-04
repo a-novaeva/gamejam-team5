@@ -1,12 +1,36 @@
-[gd_scene load_steps=3 format=3 uid="uid://rnk4rcy4lknc"]
+[gd_scene load_steps=5 format=3 uid="uid://rnk4rcy4lknc"]
 
 [ext_resource type="PackedScene" uid="uid://ojqkh1fp1khg" path="res://Scenes/player.tscn" id="1_vk57k"]
 [ext_resource type="PackedScene" uid="uid://dhh6qvsvlhvft" path="res://Scenes/spaceplatform3.tscn" id="2_8ffim"]
+[ext_resource type="Script" uid="uid://1fnlhfhkvwm" path="res://Code/platform.gd" id="3_xfk5q"]
+[ext_resource type="PackedScene" uid="uid://p80odyal5lgg" path="res://Scenes/static_platform.tscn" id="4_7p6j4"]
 
 [node name="Level1" type="Node2D"]
 
 [node name="Spacefrog" parent="." instance=ExtResource("1_vk57k")]
-position = Vector2(210, 615)
+position = Vector2(262, 872)
+move_speed = 0.15
 
-[node name="Spaceplatform3" parent="." instance=ExtResource("2_8ffim")]
-position = Vector2(164, 619)
+[node name="Platforms" type="Node2D" parent="."]
+
+[node name="Spaceplatform3" parent="Platforms" instance=ExtResource("2_8ffim")]
+position = Vector2(500, 800)
+script = ExtResource("3_xfk5q")
+velocity = Vector2(-50, 0)
+
+[node name="StaticPlatform" parent="Platforms" instance=ExtResource("4_7p6j4")]
+position = Vector2(84, 891)
+
+[node name="StaticPlatform2" parent="Platforms" instance=ExtResource("4_7p6j4")]
+position = Vector2(252, 891)
+
+[node name="StaticPlatform3" parent="Platforms" instance=ExtResource("4_7p6j4")]
+position = Vector2(420, 891)
+
+[node name="StaticPlatform4" parent="Platforms" instance=ExtResource("4_7p6j4")]
+position = Vector2(588, 891)
+
+[node name="StaticPlatform5" parent="Platforms" instance=ExtResource("4_7p6j4")]
+position = Vector2(756, 891)
+
+[editable path="Platforms/Spaceplatform3"]

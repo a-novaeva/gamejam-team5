@@ -1,24 +1,28 @@
 extends CharacterBody2D
 
-# Adjust this to match your background tile size in pixels
-@export var tile_size: int = 64
-
-# Controls how fast the visual jump happens
-@export var move_speed: float = 0.15 
+@export var tile_size: int = 32
+@export var move_speed: float = 2
 
 var is_moving: bool = false
 var target_position: Vector2 = Vector2.ZERO
+var current_platform: Area2D = null
 
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 
 func _ready() -> void:
-	position = position.snapped(Vector2(tile_size, tile_size))
-	target_position = position
+	pass
 
 func _physics_process(_delta: float) -> void:
+	if current_platform:
+		if "velocity" in current_platform and current_platform.velocity != Vector2.ZERO:
+			var drift = current_platform.velocity * _delta
+			global_position += drift
+
+			if is_moving:
+				target_position += drift
+
 	if is_moving:
 		position = position.move_toward(target_position, tile_size * (1.0 / move_speed) * _delta)
-		
 		if position == target_position:
 			is_moving = false
 			if sprite.is_playing() and sprite.animation == "jump":
@@ -30,32 +34,38 @@ func _physics_process(_delta: float) -> void:
 
 func get_input_direction() -> Vector2:
 	var dir = Vector2.ZERO
-	
-	if Input.is_action_just_pressed("move_up"):
-		dir = Vector2.UP
-	elif Input.is_action_just_pressed("move_down"):
-		dir = Vector2.DOWN
-	elif Input.is_action_just_pressed("move_left"):
-		dir = Vector2.LEFT
-	elif Input.is_action_just_pressed("move_right"):
-		dir = Vector2.RIGHT
+	if Input.is_action_just_pressed("move_up"): dir = Vector2.UP
+	elif Input.is_action_just_pressed("move_down"): dir = Vector2.DOWN
+	elif Input.is_action_just_pressed("move_left"): dir = Vector2.LEFT
+	elif Input.is_action_just_pressed("move_right"): dir = Vector2.RIGHT
 	return dir
 
 func move_to_tile(direction: Vector2) -> void:
-	target_position = position + direction * tile_size
-	is_moving = true
+	var next_position = position + direction * tile_size
 	
-	update_sprite_orientation(direction)
+	var min_x: float = 16.0
+	var max_x: float = 752.0
+	var min_y: float = 16.0
+	var max_y: float = 882.0
+
+	if next_position.x < min_x or next_position.x > max_x:
+		return
+	if next_position.y < min_y or next_position.y > max_y:
+		return
+
+	current_platform = null 
+	target_position = next_position
+	is_moving = true
 	
 	if sprite.sprite_frames.has_animation("jump"):
 		sprite.play("jump")
+		
+func _on_platform_detector_area_entered(area: Area2D) -> void:
+	if "velocity" in area:
+		current_platform = area
+		if not is_moving:
+			target_position.y = area.global_position.y
 
-func update_sprite_orientation(direction: Vector2) -> void:
-	if direction == Vector2.UP:
-		sprite.rotation_degrees = 0
-	elif direction == Vector2.DOWN:
-		sprite.rotation_degrees = 180
-	elif direction == Vector2.LEFT:
-		sprite.rotation_degrees = 270
-	elif direction == Vector2.RIGHT:
-		sprite.rotation_degrees = 90
+func _on_platform_detector_area_exited(area: Area2D) -> void:
+	if current_platform == area:
+		current_platform = null

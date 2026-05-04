@@ -1,0 +1,56 @@
+[gd_scene load_steps=4 format=3 uid="uid://p80odyal5lgg"]
+
+[ext_resource type="Script" uid="uid://ddhawg0jyvgm6" path="res://Code/static_platform.gd" id="1_jm10p"]
+[ext_resource type="Texture2D" uid="uid://wi41hi3pxva4" path="res://Sprites/lautta2.png" id="2_36tcy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aufn6"]
+size = Vector2(168, 8)
+
+[node name="StaticPlatform" type="Area2D"]
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("1_jm10p")
+
+[node name="Lautta2" type="Sprite2D" parent="."]
+position = Vector2(-72, 0)
+texture = ExtResource("2_36tcy")
+region_enabled = true
+region_rect = Rect2(3.605423, 12.049813, 24.823494, 8.472688)
+
+[node name="Lautta3" type="Sprite2D" parent="."]
+position = Vector2(-48, 0)
+texture = ExtResource("2_36tcy")
+region_enabled = true
+region_rect = Rect2(3.605423, 12.049813, 24.823494, 8.472688)
+
+[node name="Lautta4" type="Sprite2D" parent="."]
+position = Vector2(-24, 0)
+texture = ExtResource("2_36tcy")
+region_enabled = true
+region_rect = Rect2(3.605423, 12.049813, 24.823494, 8.472688)
+
+[node name="Lautta5" type="Sprite2D" parent="."]
+texture = ExtResource("2_36tcy")
+region_enabled = true
+region_rect = Rect2(3.605423, 12.049813, 24.823494, 8.472688)
+
+[node name="Lautta6" type="Sprite2D" parent="."]
+position = Vector2(24, 0)
+texture = ExtResource("2_36tcy")
+region_enabled = true
+region_rect = Rect2(3.605423, 12.049813, 24.823494, 8.472688)
+
+[node name="Lautta7" type="Sprite2D" parent="."]
+position = Vector2(48, 0)
+texture = ExtResource("2_36tcy")
+region_enabled = true
+region_rect = Rect2(3.605423, 12.049813, 24.823494, 8.472688)
+
+[node name="Lautta8" type="Sprite2D" parent="." groups=["platforms"]]
+position = Vector2(72, 0)
+texture = ExtResource("2_36tcy")
+region_enabled = true
+region_rect = Rect2(3.605423, 12.049813, 24.823494, 8.472688)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_aufn6")
