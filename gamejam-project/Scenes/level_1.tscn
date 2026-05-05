@@ -1,14 +1,20 @@
-[gd_scene load_steps=5 format=3 uid="uid://rnk4rcy4lknc"]
+[gd_scene load_steps=7 format=3 uid="uid://rnk4rcy4lknc"]
 
 [ext_resource type="PackedScene" uid="uid://ojqkh1fp1khg" path="res://Scenes/player.tscn" id="1_vk57k"]
 [ext_resource type="PackedScene" uid="uid://dhh6qvsvlhvft" path="res://Scenes/spaceplatform3.tscn" id="2_8ffim"]
 [ext_resource type="Script" uid="uid://1fnlhfhkvwm" path="res://Code/platform.gd" id="3_xfk5q"]
 [ext_resource type="PackedScene" uid="uid://p80odyal5lgg" path="res://Scenes/static_platform.tscn" id="4_7p6j4"]
 
-[node name="Level1" type="Node2D"]
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_7p6j4"]
+normal = Vector2(1, 0)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_6444e"]
+normal = Vector2(-1, 0)
+
+[node name="Level1" type="Node"]
 
 [node name="Spacefrog" parent="." instance=ExtResource("1_vk57k")]
-position = Vector2(262, 872)
+position = Vector2(384, 872)
 move_speed = 0.15
 
 [node name="Platforms" type="Node2D" parent="."]
@@ -32,5 +38,16 @@ position = Vector2(588, 891)
 
 [node name="StaticPlatform5" parent="Platforms" instance=ExtResource("4_7p6j4")]
 position = Vector2(756, 891)
+
+[node name="Boundary" type="Area2D" parent="." groups=["Boundary"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundary"]
+shape = SubResource("WorldBoundaryShape2D_7p6j4")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Boundary"]
+position = Vector2(768, 0)
+shape = SubResource("WorldBoundaryShape2D_6444e")
+
+[connection signal="body_entered" from="Boundary" to="Spacefrog" method="_on_boundary_body_entered"]
 
 [editable path="Platforms/Spaceplatform3"]

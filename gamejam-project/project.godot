@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="Gamejam project"
+config/name="Astro Hop"
 run/main_scene="uid://rnk4rcy4lknc"
 config/features=PackedStringArray("4.5", "Mobile")
 config/icon="res://icon.svg"

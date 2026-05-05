@@ -1,16 +1,19 @@
 extends CharacterBody2D
+class_name Player
 
 @export var tile_size: int = 32
-@export var move_speed: float = 2
+@export var move_speed: float = 0.2
 
 var is_moving: bool = false
 var target_position: Vector2 = Vector2.ZERO
 var current_platform: Area2D = null
+var respawn_position: Vector2
 
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 
 func _ready() -> void:
-	pass
+	respawn_position = position
+	target_position = position
 
 func _physics_process(_delta: float) -> void:
 	if current_platform:
@@ -43,13 +46,9 @@ func get_input_direction() -> Vector2:
 func move_to_tile(direction: Vector2) -> void:
 	var next_position = position + direction * tile_size
 	
-	var min_x: float = 16.0
-	var max_x: float = 752.0
 	var min_y: float = 16.0
 	var max_y: float = 882.0
 
-	if next_position.x < min_x or next_position.x > max_x:
-		return
 	if next_position.y < min_y or next_position.y > max_y:
 		return
 
@@ -57,8 +56,18 @@ func move_to_tile(direction: Vector2) -> void:
 	target_position = next_position
 	is_moving = true
 	
-	if sprite.sprite_frames.has_animation("jump"):
-		sprite.play("jump")
+	if direction == Vector2.UP:
+		sprite.play("back")
+		sprite.flip_h = false
+	elif direction == Vector2.DOWN:
+		sprite.play("front")
+		sprite.flip_h = false
+	elif direction == Vector2.LEFT:
+		sprite.play("walk")
+		sprite.flip_h = true
+	elif direction == Vector2.RIGHT:
+		sprite.play("walk")
+		sprite.flip_h = false
 		
 func _on_platform_detector_area_entered(area: Area2D) -> void:
 	if "velocity" in area:
@@ -69,3 +78,17 @@ func _on_platform_detector_area_entered(area: Area2D) -> void:
 func _on_platform_detector_area_exited(area: Area2D) -> void:
 	if current_platform == area:
 		current_platform = null
+
+func die() -> void:
+	is_moving = false
+	current_platform = null
+	
+	position = respawn_position
+	target_position = respawn_position
+
+	sprite.play("idle")
+	sprite.flip_h = false
+
+func _on_boundary_body_entered(body: Node2D) -> void:
+	if body is Player:
+		body.die()
