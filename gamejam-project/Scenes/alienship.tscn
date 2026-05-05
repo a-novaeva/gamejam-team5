@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://b057a2r5lxwa6"]
+
+[ext_resource type="Script" uid="uid://pb74lh1vrvla" path="res://Scenes/hazard.gd" id="1_0h56v"]
+[ext_resource type="Texture2D" uid="uid://b0l8jsvh64uy4" path="res://Sprites/alienship.png" id="1_22u1y"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0h56v"]
+size = Vector2(46, 13)
+
+[node name="Alienship" type="Area2D"]
+collision_layer = 8
+script = ExtResource("1_0h56v")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -2.2500002)
+scale = Vector2(1, 1.5)
+texture = ExtResource("1_22u1y")
+region_enabled = true
+region_rect = Rect2(9.161747, 24.321276, 46.55861, 9.459135)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -2.5)
+shape = SubResource("RectangleShape2D_0h56v")

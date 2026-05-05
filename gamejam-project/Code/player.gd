@@ -97,5 +97,10 @@ func die() -> void:
 
 func _on_boundary_body_entered(body: Node2D) -> void:
 	if body is Player:
-		sprite.play("die")
 		body.die()
+
+
+func _on_alienship_body_entered(body: Node2D) -> void:
+	if body is Player:
+		body.die()
+		 # Replace with function body.
