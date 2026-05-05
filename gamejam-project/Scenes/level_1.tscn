@@ -55,8 +55,8 @@ shape = SubResource("WorldBoundaryShape2D_6444e")
 [node name="Alienship" parent="Hazards" instance=ExtResource("5_6444e")]
 position = Vector2(374, 746)
 
-[node name="SpaceBackground" type="Sprite2D" parent="Hazards"]
-modulate = Color(0.5931336, 0.59313357, 0.59313357, 1)
+[node name="SpaceBackground" type="Sprite2D" parent="."]
+modulate = Color(0.28118703, 0.2811868, 0.28118682, 1)
 z_index = -10
 position = Vector2(382.5, 445.5)
 scale = Vector2(3.835, 4.4750004)
