@@ -87,8 +87,7 @@ func die() -> void:
 	if sprite.sprite_frames.has_animation("die"):
 		sprite.play("die")
 		await sprite.animation_finished
-	else:
-		await get_tree().create_timer(0.5).timeout
+		await get_tree().create_timer(0.8).timeout
 	
 	position = respawn_position
 	target_position = respawn_position
