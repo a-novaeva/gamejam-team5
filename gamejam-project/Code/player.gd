@@ -81,14 +81,22 @@ func _on_platform_detector_area_exited(area: Area2D) -> void:
 
 func die() -> void:
 	is_moving = false
+	set_physics_process(false)
 	current_platform = null
+	
+	if sprite.sprite_frames.has_animation("die"):
+		sprite.play("die")
+		await sprite.animation_finished
+	else:
+		await get_tree().create_timer(0.5).timeout
 	
 	position = respawn_position
 	target_position = respawn_position
 
 	sprite.play("idle")
-	sprite.flip_h = false
+	set_physics_process(true)
 
 func _on_boundary_body_entered(body: Node2D) -> void:
 	if body is Player:
+		sprite.play("die")
 		body.die()
