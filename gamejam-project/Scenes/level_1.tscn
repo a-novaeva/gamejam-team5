@@ -153,6 +153,18 @@ shape = SubResource("RectangleShape2D_wrinw")
 [node name="GoalPod" parent="." instance=ExtResource("12_uy8f0")]
 position = Vector2(94, 139)
 
+[node name="GoalPod2" parent="." instance=ExtResource("12_uy8f0")]
+position = Vector2(225, 140)
+
+[node name="GoalPod3" parent="." instance=ExtResource("12_uy8f0")]
+position = Vector2(386, 138)
+
+[node name="GoalPod4" parent="." instance=ExtResource("12_uy8f0")]
+position = Vector2(544, 139)
+
+[node name="GoalPod5" parent="." instance=ExtResource("12_uy8f0")]
+position = Vector2(671, 139)
+
 [connection signal="body_entered" from="Boundary" to="Spacefrog" method="_on_boundary_body_entered"]
 [connection signal="body_entered" from="Hazards/Alienship" to="Spacefrog" method="_on_alienship_body_entered"]
 [connection signal="body_entered" from="Hazards/Asteroid" to="Spacefrog" method="_on_asteroid_body_entered"]
