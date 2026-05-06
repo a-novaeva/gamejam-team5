@@ -70,6 +70,10 @@ func move_to_tile(direction: Vector2) -> void:
 		sprite.flip_h = false
 		
 func _on_platform_detector_area_entered(area: Area2D) -> void:
+	if area.is_in_group("Hazards"):
+		die()
+		return
+		
 	if "velocity" in area:
 		current_platform = area
 		if not is_moving:
@@ -100,7 +104,15 @@ func _on_boundary_body_entered(body: Node2D) -> void:
 		body.die()
 
 
+
 func _on_alienship_body_entered(body: Node2D) -> void:
 	if body is Player:
 		body.die()
 		 # Replace with function body.
+
+
+func _on_asteroid_body_entered(body: Node2D) -> void:
+	if body is Player:
+		body.die()
+
+	

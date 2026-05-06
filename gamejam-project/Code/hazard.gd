@@ -2,11 +2,15 @@ extends Area2D
 
 @export var speed: float = 150.0 
 
+@onready var sprite: Sprite2D = $Sprite2D
+
 var left_bound: float = -64.0
 var right_bound: float = 832.0
 
 func _process(delta: float) -> void:
 	position.x += speed * delta
+	
+	sprite.flip_h = (speed < 0)
 	
 	if speed > 0 and position.x > right_bound:
 		position.x = left_bound
