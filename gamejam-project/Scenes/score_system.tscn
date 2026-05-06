@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://bmti512bflca5"]
+
+[ext_resource type="Script" uid="uid://83hmj2etwd8s" path="res://score_system.gd" id="1_i064m"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_v7q2s"]
+font_size = 32
+
+[node name="ScoreSystem" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_i064m")
+
+[node name="ScoreLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 598.0
+offset_top = 25.0
+offset_right = 755.0
+offset_bottom = 70.0
+text = "Score: 999"
+label_settings = SubResource("LabelSettings_v7q2s")
+
+[node name="ScoreTimer" type="Timer" parent="."]
+autostart = true
