@@ -44,31 +44,31 @@ func update_heart_display():
 		
 
 func _physics_process(_delta: float) -> void:	
+	ray.force_raycast_update()
 	if ray.is_colliding():
 		var collider = ray.get_collider()
-		if collider.is_in_group("platforms"):
+		if not is_moving and "is_rideable" in collider and collider.is_rideable:
 			current_platform = collider
 	else:
-		current_platform = null
+		if not is_moving:
+			current_platform = null
 		
 	if current_platform:
-		if "velocity" in current_platform and current_platform.velocity != Vector2.ZERO:
-			var drift = current_platform.velocity * _delta
-			global_position += drift
-			if is_moving:
-				target_position += drift
+		var drift = current_platform.velocity * _delta
+		global_position += drift
+		target_position += drift
 
 	if is_moving:
 		position = position.move_toward(target_position, tile_size * (1.0 / move_speed) * _delta)
-		if position == target_position:
+		if position.distance_to(target_position) < 0.1:
+			position = target_position
 			is_moving = false
-			if sprite.is_playing() and sprite.animation == "jump":
-				sprite.play("idle")
+			check_deadzone()
 	else:
 		var input_direction = get_input_direction()
 		if input_direction != Vector2.ZERO:
 			move_to_tile(input_direction)
-
+			
 func get_input_direction() -> Vector2:
 	var dir = Vector2.ZERO
 	if Input.is_action_just_pressed("move_up"): dir = Vector2.UP
@@ -104,20 +104,15 @@ func move_to_tile(direction: Vector2) -> void:
 		sprite.flip_h = false
 		
 func _on_platform_detector_area_entered(area: Area2D) -> void:
+	if area.is_in_group("Hazards"):
+		die()
 
-	if "velocity" in area:
-		current_platform = area
-		if not is_moving:
-			target_position.y = area.global_position.y
-
-func _on_platform_detector_area_exited(area: Area2D) -> void:
-	if current_platform == area:
-		current_platform = null
+func _on_platform_detector_area_exited(_area: Area2D) -> void:
+	pass
 
 func die() -> void:
 	is_moving = false
 	set_physics_process(false)
-	current_platform = null
 	
 	if sprite.sprite_frames.has_animation("die"):
 		sprite.play("die")
@@ -130,14 +125,26 @@ func die() -> void:
 	sprite.play("idle")
 	set_physics_process(true)
 
-func _on_boundary_body_entered(body: Node2D) -> void:
-	if body is Player:
-		body.die()
+func check_deadzone() -> void:
+	# 1. Force everything to update so we don't use "old" data
+	$PlatformDetector.force_update_transform()
+	ray.force_raycast_update()
+	
+	# 2. Safety First: If the RayCast sees a platform, STOP. We are safe.
+	if ray.is_colliding():
+		var collider = ray.get_collider()
+		if "is_rideable" in collider and collider.is_rideable:
+			return # Exit the function; we are safe!
 
-func _on_alienship_body_entered(body: Node2D) -> void:
-	if body is Player:
-		body.die()
-
-func _on_asteroid_body_entered(body: Node2D) -> void:
-	if body is Player:
-		body.die()
+	# 3. Check for the Deadzone Area
+	var overlapping_areas = $PlatformDetector.get_overlapping_areas()
+	var in_deadzone = false
+	for area in overlapping_areas:
+		if area.is_in_group("Deadzone"):
+			in_deadzone = true
+			break
+	
+	# 4. The Kill Condition
+	# ONLY die if we are in the deadzone AND not jumping AND have no platform
+	if in_deadzone and not is_moving and current_platform == null:
+		die()
