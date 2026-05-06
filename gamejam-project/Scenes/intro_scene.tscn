@@ -37,15 +37,15 @@ offset_bottom = 1132.0
 grow_horizontal = 2
 theme_override_fonts/font = ExtResource("3_lim1r")
 theme_override_font_sizes/font_size = 20
-text = "Meet Ribbit — the galaxy's only amphibian astronaut.
+text = "Meet Flomp — the galaxy's only amphibian astronaut.
 
-Born on the swamp moon of Kröäk-9, Ribbit was always different from the other frogs. While they were catching flies and sitting on lily pads, Ribbit was staring at the stars, dreaming of what lay beyond the atmosphere. After years of training at the Intergalactic Academy, Ribbit finally made it, the first frog in space.
+Born on the swamp moon of Kröäk-9, Flomp was always different from the other frogs. While they were catching flies and sitting on lily pads, Flomp was staring at the stars, dreaming of what lay beyond the atmosphere. After years of training at the Intergalactic Academy, Flomp finally made it, the first frog in space.
 
 But the mission has gone sideways. A rogue asteroid storm has knocked out the station's docking bay, scattering five emergency lily pods across the orbital corridor. Without them, the station loses life support in minutes.
 
-Ribbit has to hop across the most dangerous stretch of space imaginable, dodging relentless streams of alien patrol ships and rogue satellites, leaping between drifting asteroid chunks to cross the void and reach all five lily pods before time runs out.
+Flomp has to hop across the most dangerous stretch of space imaginable, dodging relentless streams of alien patrol ships and rogue satellites, leaping between drifting asteroid chunks to cross the void and reach all five lily pods before time runs out.
 
-The fate of the station rests on the hoppiest frog in the universe. No pressure, Ribbit. 🐸"
+The fate of the station rests on the hoppiest frog in the universe. No pressure, Flomp. 🐸"
 autowrap_mode = 3
 
 [node name="Skip" type="Label" parent="."]
