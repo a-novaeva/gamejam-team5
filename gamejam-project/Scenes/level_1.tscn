@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=4 uid="uid://rnk4rcy4lknc"]
+[gd_scene load_steps=19 format=4 uid="uid://rnk4rcy4lknc"]
 
 [ext_resource type="Script" uid="uid://bal5ty5sbmk3v" path="res://Code/level_manager.gd" id="1_af3po"]
 [ext_resource type="PackedScene" uid="uid://ojqkh1fp1khg" path="res://Scenes/player.tscn" id="1_vk57k"]
@@ -11,6 +11,7 @@
 [ext_resource type="Script" uid="uid://pb74lh1vrvla" path="res://Code/hazard.gd" id="8_wrinw"]
 [ext_resource type="Texture2D" uid="uid://doo80gd7xl02b" path="res://Textures/space_background_2.png" id="9_wrinw"]
 [ext_resource type="TileSet" uid="uid://cpr4ony670uh0" path="res://Textures/astrohop.tres" id="10_chwpn"]
+[ext_resource type="AudioStream" uid="uid://c2b0an2h26u4t" path="res://Audio/level_3.wav" id="12_6r07y"]
 [ext_resource type="PackedScene" uid="uid://do2cykr6teij6" path="res://Scenes/goal_pod.tscn" id="12_uy8f0"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_7p6j4"]
@@ -21,6 +22,16 @@ normal = Vector2(-1, 0)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wrinw"]
 texture = ExtResource("9_wrinw")
+
+[sub_resource type="GDScript" id="GDScript_6ioyp"]
+script/source = "extends AudioStreamPlayer
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass
+	
+"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wrinw"]
 size = Vector2(768, 145)
@@ -141,6 +152,12 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_wrinw")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_6r07y")
+volume_db = -10.0
+autoplay = true
+script = SubResource("GDScript_6ioyp")
 
 [node name="Deadzone" type="Area2D" parent="." groups=["Deadzone"]]
 collision_layer = 32
