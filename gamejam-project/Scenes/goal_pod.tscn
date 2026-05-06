@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://do2cykr6teij6"]
+
+[ext_resource type="Texture2D" uid="uid://dsjpvqmgb0urw" path="res://Sprites/goal_pod.png" id="1_42w4m"]
+[ext_resource type="Script" uid="uid://61so7vedkuu1" path="res://Code/goal_pod.gd" id="1_k1tni"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k1tni"]
+size = Vector2(24, 16)
+
+[node name="GoalPod" type="Area2D"]
+collision_layer = 64
+collision_mask = 0
+script = ExtResource("1_k1tni")
+
+[node name="GoalPod" type="Sprite2D" parent="."]
+texture = ExtResource("1_42w4m")
+region_enabled = true
+region_rect = Rect2(6.492031, 0, 19.293934, 31.124971)
+
+[node name="OccupiedSprite" type="Sprite2D" parent="."]
+texture = ExtResource("1_42w4m")
+region_enabled = true
+region_rect = Rect2(34.942413, 0, 25.997765, 29.489893)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1.7881393e-07, -4)
+rotation = 1.5707964
+shape = SubResource("RectangleShape2D_k1tni")

@@ -14,6 +14,8 @@ var health = 5 # joni hp
 @onready var ray: RayCast2D = $RayCast2D
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 
+signal goal_reached
+
 func _ready() -> void:
 	respawn_position = position
 	target_position = position
@@ -25,7 +27,7 @@ func _ready() -> void:
 func take_damage(): # joni hp
 	if health > 0:
 		health -= 1
-		$damage.play("damaged")
+		if $damage: $damage.play("damaged")
 		update_heart_display()
 		
 	if health <= 0:
@@ -33,7 +35,7 @@ func take_damage(): # joni hp
 	
 func update_heart_display():
 	for i in range(hearts_list.size()):
-		hearts_list[i].visible = 1 < health
+		hearts_list[i].visible = i < health
 		
 	if health <= 0:
 		get_tree().change_scene_to_file("res://Scenes/game_over.tscn")
@@ -59,6 +61,8 @@ func _physics_process(_delta: float) -> void:
 		if position.distance_to(target_position) < 0.1:
 			position = target_position
 			is_moving = false
+			
+			check_goals()
 			check_deadzone()
 	else:
 		var input_direction = get_input_direction()
@@ -106,9 +110,35 @@ func _on_platform_detector_area_entered(area: Area2D) -> void:
 func _on_platform_detector_area_exited(_area: Area2D) -> void:
 	pass
 
+func check_goals() -> void:
+	$PlatformDetector.force_update_transform()
+	var overlapping = $PlatformDetector.get_overlapping_areas()
+	
+	for area in overlapping:
+		if area.is_in_group("GoalPods"):
+			if not area.is_occupied:
+				area.fill_goal()
+				reset_to_start()
+				goal_reached.emit()
+			else:
+				die()
+			break
+			
+			
+func reset_to_start():
+	is_moving = false
+	current_platform = null
+	position = respawn_position
+	target_position = respawn_position
+	sprite.play("idle")
+			
+			
 func die() -> void:
 	is_moving = false
 	set_physics_process(false)
+	current_platform = null
+	
+	take_damage()
 	
 	if sprite.sprite_frames.has_animation("die"):
 		sprite.play("die")
@@ -138,4 +168,9 @@ func check_deadzone() -> void:
 			break
 
 	if in_deadzone and not is_moving and current_platform == null:
+		die()
+
+
+func _on_boundary_body_entered(body: Node2D) -> void:
+	if body is Player:
 		die()

@@ -1,23 +1,31 @@
-[gd_scene load_steps=2 format=3 uid="uid://dl068ln6uf7sb"]
+[gd_scene load_steps=4 format=3 uid="uid://dl068ln6uf7sb"]
 
 [ext_resource type="Texture2D" uid="uid://coyfu1q8i0dt4" path="res://Sprites/lautta3.png" id="1_2xkig"]
+[ext_resource type="Script" uid="uid://1fnlhfhkvwm" path="res://Code/platform.gd" id="1_bv66a"]
 
-[node name="Rockplatform3" type="Node2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o2qkd"]
+size = Vector2(93, 10)
+
+[node name="Rockplatform3" type="Area2D"]
+script = ExtResource("1_bv66a")
 
 [node name="Kivilautta1" type="Sprite2D" parent="."]
-position = Vector2(38, 24)
 texture = ExtResource("1_2xkig")
 region_enabled = true
 region_rect = Rect2(0, 6.173151, 32.308815, 19.223179)
 
 [node name="Kivilautta2" type="Sprite2D" parent="."]
-position = Vector2(70, 24)
+position = Vector2(31, 0)
 texture = ExtResource("1_2xkig")
 region_enabled = true
 region_rect = Rect2(0, 6.173151, 32.308815, 19.223179)
 
 [node name="Kivilautta3" type="Sprite2D" parent="."]
-position = Vector2(102, 24)
+position = Vector2(62, 0)
 texture = ExtResource("1_2xkig")
 region_enabled = true
 region_rect = Rect2(0, 6.173151, 32.308815, 19.223179)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(30.5, -4)
+shape = SubResource("RectangleShape2D_o2qkd")

@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dl06kvnqy1i8v" path="res://Sprites/avaruusolio.png" id="2_6t5aa"]
 [ext_resource type="Texture2D" uid="uid://qd8i2jyibe2m" path="res://Sprites/avaruusolio_idle.png" id="3_6t5aa"]
 [ext_resource type="Texture2D" uid="uid://xsxyawvsreyf" path="res://Sprites/frog_skull.png" id="3_vgqql"]
-[ext_resource type="Texture2D" uid="uid://cmhex4eykngb3" path="res://Sprites/heart.png" id="5_fkybt"]
+[ext_resource type="Texture2D" uid="uid://bhsw0gq57hfyu" path="res://Sprites/health_point.png" id="5_fkybt"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fkybt"]
 atlas = ExtResource("3_6t5aa")
@@ -111,7 +111,7 @@ shape = SubResource("RectangleShape2D_r47xg")
 
 [node name="PlatformDetector" type="Area2D" parent="."]
 collision_layer = 0
-collision_mask = 60
+collision_mask = 124
 monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlatformDetector"]
@@ -136,31 +136,26 @@ offset_bottom = 55.0
 layout_mode = 2
 texture = ExtResource("5_fkybt")
 expand_mode = 3
-stretch_mode = 2
 
 [node name="Heart2" type="TextureRect" parent="Healthbar/HBoxContainer"]
 layout_mode = 2
 texture = ExtResource("5_fkybt")
 expand_mode = 3
-stretch_mode = 2
 
 [node name="Heart3" type="TextureRect" parent="Healthbar/HBoxContainer"]
 layout_mode = 2
 texture = ExtResource("5_fkybt")
 expand_mode = 3
-stretch_mode = 2
 
 [node name="Heart4" type="TextureRect" parent="Healthbar/HBoxContainer"]
 layout_mode = 2
 texture = ExtResource("5_fkybt")
 expand_mode = 3
-stretch_mode = 2
 
 [node name="Heart5" type="TextureRect" parent="Healthbar/HBoxContainer"]
 layout_mode = 2
 texture = ExtResource("5_fkybt")
 expand_mode = 3
-stretch_mode = 2
 
 [connection signal="area_entered" from="PlatformDetector" to="." method="_on_platform_detector_area_entered"]
 [connection signal="area_exited" from="PlatformDetector" to="." method="_on_platform_detector_area_exited"]

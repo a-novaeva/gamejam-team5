@@ -1,14 +1,17 @@
-[gd_scene load_steps=14 format=4 uid="uid://rnk4rcy4lknc"]
+[gd_scene load_steps=17 format=4 uid="uid://rnk4rcy4lknc"]
 
+[ext_resource type="Script" uid="uid://bal5ty5sbmk3v" path="res://Code/level_manager.gd" id="1_af3po"]
 [ext_resource type="PackedScene" uid="uid://ojqkh1fp1khg" path="res://Scenes/player.tscn" id="1_vk57k"]
 [ext_resource type="PackedScene" uid="uid://dhh6qvsvlhvft" path="res://Scenes/Platforms/spaceplatform3.tscn" id="2_8ffim"]
 [ext_resource type="Script" uid="uid://1fnlhfhkvwm" path="res://Code/platform.gd" id="3_xfk5q"]
+[ext_resource type="PackedScene" uid="uid://ce00nxxafuxd3" path="res://Scenes/Platforms/rockplatform1.tscn" id="4_chwpn"]
 [ext_resource type="PackedScene" uid="uid://b057a2r5lxwa6" path="res://Scenes/Hazards/alienship.tscn" id="5_6444e"]
 [ext_resource type="PackedScene" uid="uid://c1k6ulwokgefx" path="res://Scenes/Hazards/asteroid.tscn" id="7_xrdnt"]
 [ext_resource type="PackedScene" uid="uid://b6rvjrl3v45wp" path="res://Scenes/Hazards/alus.tscn" id="8_chwpn"]
 [ext_resource type="Script" uid="uid://pb74lh1vrvla" path="res://Code/hazard.gd" id="8_wrinw"]
 [ext_resource type="Texture2D" uid="uid://doo80gd7xl02b" path="res://Textures/space_background_2.png" id="9_wrinw"]
 [ext_resource type="TileSet" uid="uid://cpr4ony670uh0" path="res://Textures/astrohop.tres" id="10_chwpn"]
+[ext_resource type="PackedScene" uid="uid://do2cykr6teij6" path="res://Scenes/goal_pod.tscn" id="12_uy8f0"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_7p6j4"]
 normal = Vector2(1, 0)
@@ -23,6 +26,7 @@ texture = ExtResource("9_wrinw")
 size = Vector2(768, 145)
 
 [node name="Level1" type="Node"]
+script = ExtResource("1_af3po")
 
 [node name="Spacefrog" parent="." instance=ExtResource("1_vk57k")]
 position = Vector2(384, 872)
@@ -30,9 +34,10 @@ collision_mask = 14
 move_speed = 0.15
 
 [node name="Platforms" type="Node2D" parent="." groups=["platforms"]]
+z_index = -1
 
 [node name="Spaceplatform3" parent="Platforms" groups=["platforms"] instance=ExtResource("2_8ffim")]
-position = Vector2(500, 800)
+position = Vector2(750, 608)
 monitoring = false
 script = ExtResource("3_xfk5q")
 velocity = Vector2(-50, 0)
@@ -42,6 +47,57 @@ position = Vector2(371, 672)
 monitoring = false
 script = ExtResource("3_xfk5q")
 velocity = Vector2(-50, 0)
+
+[node name="Rockplatform1" parent="Platforms" groups=["platforms"] instance=ExtResource("4_chwpn")]
+position = Vector2(500, 640)
+collision_layer = 4
+collision_mask = 0
+velocity = Vector2(-5, 0)
+
+[node name="Spaceplatform5" parent="Platforms" groups=["platforms"] instance=ExtResource("2_8ffim")]
+position = Vector2(385, 601)
+script = ExtResource("3_xfk5q")
+velocity = Vector2(0, 0)
+
+[node name="Spaceplatform6" parent="Platforms" groups=["platforms"] instance=ExtResource("2_8ffim")]
+position = Vector2(385, 575)
+script = ExtResource("3_xfk5q")
+velocity = Vector2(0, 0)
+
+[node name="Spaceplatform7" parent="Platforms" groups=["platforms"] instance=ExtResource("2_8ffim")]
+position = Vector2(383, 549)
+script = ExtResource("3_xfk5q")
+velocity = Vector2(0, 0)
+
+[node name="Spaceplatform8" parent="Platforms" groups=["platforms"] instance=ExtResource("2_8ffim")]
+position = Vector2(382, 524)
+script = ExtResource("3_xfk5q")
+velocity = Vector2(0, 0)
+
+[node name="Spaceplatform10" parent="Platforms" groups=["platforms"] instance=ExtResource("2_8ffim")]
+position = Vector2(383, 564)
+script = ExtResource("3_xfk5q")
+velocity = Vector2(0, 0)
+
+[node name="Spaceplatform11" parent="Platforms" groups=["platforms"] instance=ExtResource("2_8ffim")]
+position = Vector2(383, 539)
+script = ExtResource("3_xfk5q")
+velocity = Vector2(0, 0)
+
+[node name="Spaceplatform12" parent="Platforms" groups=["platforms"] instance=ExtResource("2_8ffim")]
+position = Vector2(382, 515)
+script = ExtResource("3_xfk5q")
+velocity = Vector2(0, 0)
+
+[node name="Spaceplatform13" parent="Platforms" groups=["platforms"] instance=ExtResource("2_8ffim")]
+position = Vector2(383, 588)
+script = ExtResource("3_xfk5q")
+velocity = Vector2(0, 0)
+
+[node name="Spaceplatform9" parent="Platforms" groups=["platforms"] instance=ExtResource("2_8ffim")]
+position = Vector2(381, 499)
+script = ExtResource("3_xfk5q")
+velocity = Vector2(0, 0)
 
 [node name="Boundary" type="Area2D" parent="." groups=["Boundary"]]
 
@@ -93,6 +149,9 @@ collision_mask = 0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Deadzone"]
 position = Vector2(384, 564.5)
 shape = SubResource("RectangleShape2D_wrinw")
+
+[node name="GoalPod" parent="." instance=ExtResource("12_uy8f0")]
+position = Vector2(94, 139)
 
 [connection signal="body_entered" from="Boundary" to="Spacefrog" method="_on_boundary_body_entered"]
 [connection signal="body_entered" from="Hazards/Alienship" to="Spacefrog" method="_on_alienship_body_entered"]
