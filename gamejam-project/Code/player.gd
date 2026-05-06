@@ -27,12 +27,15 @@ func take_damage(): # joni hp
 		health -= 1
 		$damage.play("damaged")
 		update_heart_display()
+		
+	if health <= 0:
+		get_tree().change_scene_to_file("res://Scenes/game_over.tscn")
+	
 func update_heart_display():
 	for i in range(hearts_list.size()):
 		hearts_list[i].visible = 1 < health
 		
-if health <= 0:
-	get_tree().change_scene_to_file("res://Scenes/game_over.tscn")
+
 
 		
 	
