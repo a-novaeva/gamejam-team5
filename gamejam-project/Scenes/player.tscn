@@ -93,7 +93,7 @@ animations = [{
 size = Vector2(24, 31)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cvnsp"]
-size = Vector2(24, 2.4157295)
+size = Vector2(20, 25.207865)
 
 [node name="Player" type="CharacterBody2D"]
 collision_mask = 6
@@ -101,9 +101,8 @@ script = ExtResource("1_cvnsp")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_ewoov")
-animation = &"die"
+animation = &"idle"
 autoplay = "idle"
-frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 0.5)
@@ -111,11 +110,16 @@ shape = SubResource("RectangleShape2D_r47xg")
 
 [node name="PlatformDetector" type="Area2D" parent="."]
 collision_layer = 0
-collision_mask = 4
+collision_mask = 60
+monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlatformDetector"]
-position = Vector2(2.3841858e-07, 16.792135)
+position = Vector2(0, 4)
 shape = SubResource("RectangleShape2D_cvnsp")
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+target_position = Vector2(0, 1)
+collision_mask = 4
 
 [connection signal="area_entered" from="PlatformDetector" to="." method="_on_platform_detector_area_entered"]
 [connection signal="area_exited" from="PlatformDetector" to="." method="_on_platform_detector_area_exited"]
