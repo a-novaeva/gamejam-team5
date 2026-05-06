@@ -171,5 +171,4 @@ position = Vector2(671, 139)
 [connection signal="body_entered" from="Hazards/Alus" to="Spacefrog" method="_on_alus_body_entered"]
 
 [editable path="Platforms/Spaceplatform3"]
-[editable path="Platforms/Spaceplatform4"]
 [editable path="Hazards/Alienship"]

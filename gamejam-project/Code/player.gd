@@ -3,12 +3,14 @@ class_name Player
 
 @export var tile_size: int = 32
 @export var move_speed: float = 0.2
+@export var heart_full_tex: Texture2D
+@export var heart_empty_tex: Texture2D
 
 var is_moving: bool = false
 var target_position: Vector2 = Vector2.ZERO
 var current_platform: Area2D = null
 var respawn_position: Vector2
-var hearts_list : Array[TextureRect] # joni hp
+var hearts_list : Array[TextureRect] = [] # joni hp
 var health = 5 # joni hp
 
 @onready var ray: RayCast2D = $RayCast2D
@@ -34,10 +36,17 @@ func take_damage(): # joni hp
 		get_tree().change_scene_to_file("res://Scenes/game_over.tscn")
 	
 func update_heart_display():
+	if hearts_list.is_empty():
+		hearts_list = $CanvasLayer/UI/HBoxContainer.get_children() as Array[TextureRect]
+		
 	for i in range(hearts_list.size()):
-		hearts_list[i].visible = i < health
+		if i < health:
+			hearts_list[i].texture = heart_full_tex
+		else:
+			hearts_list[i].texture = heart_empty_tex
 		
 	if health <= 0:
+		await get_tree().create_timer(0.3).timeout
 		get_tree().change_scene_to_file("res://Scenes/game_over.tscn")
 
 

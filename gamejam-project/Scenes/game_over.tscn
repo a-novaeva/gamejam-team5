@@ -1,6 +1,7 @@
-[gd_scene load_steps=63 format=3 uid="uid://bq0aa3l3euf2f"]
+[gd_scene load_steps=64 format=3 uid="uid://bq0aa3l3euf2f"]
 
 [ext_resource type="Texture2D" uid="uid://bvlmkottcgo21" path="res://Textures/space_background_4.png" id="1_j3ryr"]
+[ext_resource type="Script" uid="uid://b6winkb4qjvtj" path="res://Code/game_over.gd" id="1_rjluv"]
 [ext_resource type="FontFile" uid="uid://cwkqvfv2of37" path="res://Fonts/Tiny5-Regular.ttf" id="2_rjluv"]
 [ext_resource type="Texture2D" uid="uid://cv5op8x13018v" path="res://Textures/gameover_text.png" id="4_uylih"]
 [ext_resource type="Texture2D" uid="uid://dlxntsjno20ah" path="res://Sprites/bling.png" id="5_3817r"]
@@ -413,6 +414,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_rjluv")
 
 [node name="Background" type="Panel" parent="."]
 layout_mode = 1
@@ -440,7 +442,7 @@ grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="StartButton" type="Button" parent="CanvasLayer/VBoxContainer"]
+[node name="TryAgain" type="Button" parent="CanvasLayer/VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_rjluv")
 text = "TRY AGAIN?"
@@ -495,3 +497,6 @@ position = Vector2(709, 88)
 sprite_frames = SubResource("SpriteFrames_61f6c")
 animation = &"bling"
 autoplay = "bling"
+
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/TryAgain" to="." method="_on_try_again_pressed"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
