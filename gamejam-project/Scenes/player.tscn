@@ -93,10 +93,10 @@ animations = [{
 size = Vector2(24, 31)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cvnsp"]
-size = Vector2(20, 25.207865)
+size = Vector2(20, 16.603931)
 
 [node name="Player" type="CharacterBody2D"]
-collision_mask = 6
+collision_mask = 60
 script = ExtResource("1_cvnsp")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -114,7 +114,7 @@ collision_mask = 60
 monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlatformDetector"]
-position = Vector2(0, 4)
+position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_cvnsp")
 
 [node name="RayCast2D" type="RayCast2D" parent="."]

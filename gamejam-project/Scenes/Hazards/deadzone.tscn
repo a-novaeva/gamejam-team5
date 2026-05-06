@@ -3,7 +3,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wj0cd"]
 size = Vector2(778, 210)
 
-[node name="Deadzone" type="Area2D"]
+[node name="Deadzone" type="Area2D" groups=["Deadzone"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(379, 95)

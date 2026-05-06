@@ -17,7 +17,6 @@ func _ready() -> void:
 	target_position = position
 
 func _physics_process(_delta: float) -> void:	
-	
 	ray.force_raycast_update()
 	if ray.is_colliding():
 		var collider = ray.get_collider()
@@ -34,8 +33,10 @@ func _physics_process(_delta: float) -> void:
 
 	if is_moving:
 		position = position.move_toward(target_position, tile_size * (1.0 / move_speed) * _delta)
-		if position == target_position:
+		if position.distance_to(target_position) < 0.1:
+			position = target_position
 			is_moving = false
+			check_deadzone()
 	else:
 		var input_direction = get_input_direction()
 		if input_direction != Vector2.ZERO:
@@ -96,3 +97,27 @@ func die() -> void:
 
 	sprite.play("idle")
 	set_physics_process(true)
+
+func check_deadzone() -> void:
+	# 1. Force everything to update so we don't use "old" data
+	$PlatformDetector.force_update_transform()
+	ray.force_raycast_update()
+	
+	# 2. Safety First: If the RayCast sees a platform, STOP. We are safe.
+	if ray.is_colliding():
+		var collider = ray.get_collider()
+		if "is_rideable" in collider and collider.is_rideable:
+			return # Exit the function; we are safe!
+
+	# 3. Check for the Deadzone Area
+	var overlapping_areas = $PlatformDetector.get_overlapping_areas()
+	var in_deadzone = false
+	for area in overlapping_areas:
+		if area.is_in_group("Deadzone"):
+			in_deadzone = true
+			break
+	
+	# 4. The Kill Condition
+	# ONLY die if we are in the deadzone AND not jumping AND have no platform
+	if in_deadzone and not is_moving and current_platform == null:
+		die()
