@@ -108,6 +108,9 @@ shape = SubResource("WorldBoundaryShape2D_7p6j4")
 position = Vector2(768, 0)
 shape = SubResource("WorldBoundaryShape2D_6444e")
 
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Boundary"]
+polygon = PackedVector2Array(2, 90, 2, 150, 67, 151, 66, 119, 122, 118, 123, 150, 197, 151, 197, 116, 250, 116, 250, 150, 356, 150, 357, 118, 409, 117, 411, 149, 516, 150, 516, 115, 572, 117, 572, 148, 644, 149, 644, 118, 698, 117, 698, 148, 766, 151, 766, 91)
+
 [node name="Hazards" type="Node2D" parent="."]
 
 [node name="Alienship" parent="Hazards" groups=["Hazards"] instance=ExtResource("5_6444e")]
@@ -151,19 +154,19 @@ position = Vector2(384, 564.5)
 shape = SubResource("RectangleShape2D_wrinw")
 
 [node name="GoalPod" parent="." instance=ExtResource("12_uy8f0")]
-position = Vector2(94, 139)
+position = Vector2(96, 138)
 
 [node name="GoalPod2" parent="." instance=ExtResource("12_uy8f0")]
-position = Vector2(225, 140)
+position = Vector2(225, 138)
 
 [node name="GoalPod3" parent="." instance=ExtResource("12_uy8f0")]
-position = Vector2(386, 138)
+position = Vector2(385, 138)
 
 [node name="GoalPod4" parent="." instance=ExtResource("12_uy8f0")]
-position = Vector2(544, 139)
+position = Vector2(544, 138)
 
 [node name="GoalPod5" parent="." instance=ExtResource("12_uy8f0")]
-position = Vector2(671, 139)
+position = Vector2(673, 138)
 
 [connection signal="body_entered" from="Boundary" to="Spacefrog" method="_on_boundary_body_entered"]
 [connection signal="body_entered" from="Hazards/Alienship" to="Spacefrog" method="_on_alienship_body_entered"]
