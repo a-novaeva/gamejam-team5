@@ -20,7 +20,7 @@ normal = Vector2(-1, 0)
 texture = ExtResource("9_wrinw")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wrinw"]
-size = Vector2(768, 201)
+size = Vector2(768, 145)
 
 [node name="Level1" type="Node"]
 
