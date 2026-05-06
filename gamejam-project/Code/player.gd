@@ -31,14 +31,9 @@ func update_heart_display():
 	for i in range(hearts_list.size()):
 		hearts_list[i].visible = 1 < health
 		
-if health <= 0:
-	get_tree().change_scene_to_file("res://Scenes/game_over.tscn")
+	if health <= 0:
+		get_tree().change_scene_to_file("res://Scenes/game_over.tscn")
 
-		
-	
-		
-		
-		
 
 func _physics_process(_delta: float) -> void:	
 	ray.force_raycast_update()
@@ -123,25 +118,20 @@ func die() -> void:
 	set_physics_process(true)
 
 func check_deadzone() -> void:
-	# 1. Force everything to update so we don't use "old" data
 	$PlatformDetector.force_update_transform()
 	ray.force_raycast_update()
 	
-	# 2. Safety First: If the RayCast sees a platform, STOP. We are safe.
 	if ray.is_colliding():
 		var collider = ray.get_collider()
 		if "is_rideable" in collider and collider.is_rideable:
-			return # Exit the function; we are safe!
+			return
 
-	# 3. Check for the Deadzone Area
 	var overlapping_areas = $PlatformDetector.get_overlapping_areas()
 	var in_deadzone = false
 	for area in overlapping_areas:
 		if area.is_in_group("Deadzone"):
 			in_deadzone = true
 			break
-	
-	# 4. The Kill Condition
-	# ONLY die if we are in the deadzone AND not jumping AND have no platform
+
 	if in_deadzone and not is_moving and current_platform == null:
 		die()
