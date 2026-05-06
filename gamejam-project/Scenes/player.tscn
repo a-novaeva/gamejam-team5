@@ -118,8 +118,10 @@ position = Vector2(0, 4)
 shape = SubResource("RectangleShape2D_cvnsp")
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
-target_position = Vector2(0, 1)
+target_position = Vector2(0, 20)
 collision_mask = 4
+collide_with_areas = true
+collide_with_bodies = false
 
 [connection signal="area_entered" from="PlatformDetector" to="." method="_on_platform_detector_area_entered"]
 [connection signal="area_exited" from="PlatformDetector" to="." method="_on_platform_detector_area_exited"]
