@@ -9,18 +9,25 @@ var target_position: Vector2 = Vector2.ZERO
 var current_platform: Area2D = null
 var respawn_position: Vector2
 
+@onready var ray: RayCast2D = $RayCast2D
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 
 func _ready() -> void:
 	respawn_position = position
 	target_position = position
 
-func _physics_process(_delta: float) -> void:
+func _physics_process(_delta: float) -> void:	
+	if ray.is_colliding():
+		var collider = ray.get_collider()
+		if collider.is_in_group("platforms"):
+			current_platform = collider
+	else:
+		current_platform = null
+		
 	if current_platform:
 		if "velocity" in current_platform and current_platform.velocity != Vector2.ZERO:
 			var drift = current_platform.velocity * _delta
 			global_position += drift
-
 			if is_moving:
 				target_position += drift
 
@@ -47,7 +54,7 @@ func move_to_tile(direction: Vector2) -> void:
 	var next_position = position + direction * tile_size
 	
 	var min_y: float = 16.0
-	var max_y: float = 882.0
+	var max_y: float = 896.0
 
 	if next_position.y < min_y or next_position.y > max_y:
 		return
@@ -70,10 +77,7 @@ func move_to_tile(direction: Vector2) -> void:
 		sprite.flip_h = false
 		
 func _on_platform_detector_area_entered(area: Area2D) -> void:
-	if area.is_in_group("Hazards"):
-		die()
-		return
-		
+
 	if "velocity" in area:
 		current_platform = area
 		if not is_moving:
@@ -103,16 +107,10 @@ func _on_boundary_body_entered(body: Node2D) -> void:
 	if body is Player:
 		body.die()
 
-
-
 func _on_alienship_body_entered(body: Node2D) -> void:
 	if body is Player:
 		body.die()
-		 # Replace with function body.
-
 
 func _on_asteroid_body_entered(body: Node2D) -> void:
 	if body is Player:
 		body.die()
-
-	
