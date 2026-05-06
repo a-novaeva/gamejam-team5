@@ -22,6 +22,10 @@ func _on_score_timer_timeout():
 
 func update_score_display():
 	score_label.text = "Score: " + str(current_score)
+	
+func reset_game():
+	current_score = 999
+
 
 func trigger_game_over():
 	score_timer.stop()
