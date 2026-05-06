@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://d0x6fkp85fbj5" path="res://Code/main_menu.gd" id="1_28flt"]
 [ext_resource type="FontFile" uid="uid://cwkqvfv2of37" path="res://Fonts/Tiny5-Regular.ttf" id="2_48xlc"]
-[ext_resource type="Texture2D" uid="uid://dhdn5egfvncpk" path="res://Textures/space_background.png" id="3_1ehe0"]
+[ext_resource type="Texture2D" uid="uid://cgath23po6lbe" path="res://Textures/space_background.png" id="3_1ehe0"]
 [ext_resource type="AudioStream" uid="uid://df5e34ctywvon" path="res://Audio/main_menu.wav" id="4_ce3w2"]
 [ext_resource type="Texture2D" uid="uid://brpuqbkibnf1s" path="res://astrohop_logo.png" id="5_n45e2"]
 [ext_resource type="Texture2D" uid="uid://dlxntsjno20ah" path="res://Sprites/bling.png" id="6_opfnp"]
