@@ -1,0 +1,23 @@
+extends Control
+
+@onready var intro_label = $Label
+
+func _ready():
+	
+	intro_label.visible_ratio = 0.0
+	await get_tree().create_timer(0.5).timeout
+	
+	play_typing_effect()
+
+func play_typing_effect():
+	intro_label.modulate.a = 1.0 
+	intro_label.visible_ratio = 0.0
+	
+	var tween = create_tween()
+	tween.tween_property(intro_label, "visible_ratio", 1.0, 35.0)
+	await get_tree().create_timer(45.0).timeout
+	get_tree().change_scene_to_file("res://Scenes/level_1.tscn")
+
+func _input(event):
+	if event.is_action_pressed("ui_accept"):
+		get_tree().change_scene_to_file("res://Scenes/level_1.tscn")

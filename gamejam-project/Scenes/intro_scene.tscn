@@ -1,0 +1,64 @@
+[gd_scene load_steps=5 format=3 uid="uid://dcrohjt8innnw"]
+
+[ext_resource type="Script" uid="uid://3siju60sci6m" path="res://Code/intro_scene.gd" id="1_d30j0"]
+[ext_resource type="Texture2D" uid="uid://doo80gd7xl02b" path="res://Textures/space_background_2.png" id="2_bbocs"]
+[ext_resource type="FontFile" uid="uid://blqe548smsopr" path="res://Fonts/Geo-Regular.ttf" id="3_lim1r"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lim1r"]
+texture = ExtResource("2_bbocs")
+modulate_color = Color(0.49354547, 0.49354553, 0.49354553, 1)
+
+[node name="IntroScene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_d30j0")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 769.0
+offset_bottom = 896.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_lim1r")
+
+[node name="Label" type="Label" parent="."]
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(400, 200)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -267.0
+offset_top = 110.0
+offset_right = 280.0
+offset_bottom = 1132.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("3_lim1r")
+theme_override_font_sizes/font_size = 20
+text = "Meet Ribbit — the galaxy's only amphibian astronaut.
+
+Born on the swamp moon of Kröäk-9, Ribbit was always different from the other frogs. While they were catching flies and sitting on lily pads, Ribbit was staring at the stars, dreaming of what lay beyond the atmosphere. After years of training at the Intergalactic Academy, Ribbit finally made it, the first frog in space.
+
+But the mission has gone sideways. A rogue asteroid storm has knocked out the station's docking bay, scattering five emergency lily pods across the orbital corridor. Without them, the station loses life support in minutes.
+
+Ribbit has to hop across the most dangerous stretch of space imaginable, dodging relentless streams of alien patrol ships and rogue satellites, leaping between drifting asteroid chunks to cross the void and reach all five lily pods before time runs out.
+
+The fate of the station rests on the hoppiest frog in the universe. No pressure, Ribbit. 🐸"
+autowrap_mode = 3
+
+[node name="Skip" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -91.0
+offset_top = -23.0
+offset_right = 91.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("3_lim1r")
+text = "Press SPACE or ENTER to skip"
