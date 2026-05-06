@@ -8,6 +8,8 @@ var is_moving: bool = false
 var target_position: Vector2 = Vector2.ZERO
 var current_platform: Area2D = null
 var respawn_position: Vector2
+var hearts_list : Array[TextureRect] # joni hp
+var health = 5 # joni hp
 
 @onready var ray: RayCast2D = $RayCast2D
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
@@ -15,6 +17,28 @@ var respawn_position: Vector2
 func _ready() -> void:
 	respawn_position = position
 	target_position = position
+	var hearts_parent = $Healthbar/HBoxContainer
+	for child in hearts_parent.get_children():
+		hearts_list.append(child)
+	print(hearts_list)
+
+func take_damage(): # joni hp
+	if health > 0:
+		health -= 1
+		$damage.play("damaged")
+		update_heart_display()
+func update_heart_display():
+	for i in range(hearts_list.size()):
+		hearts_list[i].visible = 1 < health
+		
+if health <= 0:
+	get_tree().change_scene_to_file("res://Scenes/game_over.tscn")
+
+		
+	
+		
+		
+		
 
 func _physics_process(_delta: float) -> void:	
 	if ray.is_colliding():
