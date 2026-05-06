@@ -1,8 +1,9 @@
-[gd_scene load_steps=64 format=3 uid="uid://bq0aa3l3euf2f"]
+[gd_scene load_steps=65 format=3 uid="uid://bq0aa3l3euf2f"]
 
 [ext_resource type="Texture2D" uid="uid://bvlmkottcgo21" path="res://Textures/space_background_4.png" id="1_j3ryr"]
 [ext_resource type="Script" uid="uid://b6winkb4qjvtj" path="res://Code/game_over.gd" id="1_rjluv"]
 [ext_resource type="FontFile" uid="uid://cwkqvfv2of37" path="res://Fonts/Tiny5-Regular.ttf" id="2_rjluv"]
+[ext_resource type="AudioStream" uid="uid://djkmoihspeiic" path="res://Audio/game_over_screen.mp3" id="4_rjluv"]
 [ext_resource type="Texture2D" uid="uid://cv5op8x13018v" path="res://Textures/gameover_text.png" id="4_uylih"]
 [ext_resource type="Texture2D" uid="uid://dlxntsjno20ah" path="res://Sprites/bling.png" id="5_3817r"]
 [ext_resource type="Texture2D" uid="uid://ca5erljehr827" path="res://Sprites/black_hole.png" id="6_mitgx"]
@@ -459,6 +460,7 @@ theme_override_fonts/font = ExtResource("2_rjluv")
 text = "EXIT"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_rjluv")
 volume_db = -10.0
 autoplay = true
 script = SubResource("GDScript_asocn")

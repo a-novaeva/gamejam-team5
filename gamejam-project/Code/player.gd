@@ -33,6 +33,8 @@ func take_damage(): # joni hp
 		update_heart_display()
 		
 	if health <= 0:
+		$GameOverSound.play()
+		await get_tree().create_timer(1.2).timeout
 		get_tree().change_scene_to_file("res://Scenes/game_over.tscn")
 	
 func update_heart_display():
@@ -46,7 +48,8 @@ func update_heart_display():
 			hearts_list[i].texture = heart_empty_tex
 		
 	if health <= 0:
-		await get_tree().create_timer(0.3).timeout
+		$GameOverSound.play()
+		await get_tree().create_timer(1.1).timeout
 		get_tree().change_scene_to_file("res://Scenes/game_over.tscn")
 
 
@@ -152,7 +155,7 @@ func die() -> void:
 	if sprite.sprite_frames.has_animation("die"):
 		sprite.play("die")
 		await sprite.animation_finished
-		await get_tree().create_timer(0.8).timeout
+		await get_tree().create_timer(1.2).timeout
 	
 	position = respawn_position
 	target_position = respawn_position

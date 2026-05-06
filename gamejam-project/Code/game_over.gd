@@ -6,3 +6,7 @@ func _on_try_again_pressed() -> void:
 	
 func _on_quit_button_pressed() -> void:
 	get_tree().quit()
+
+func _process(_delta):
+	if $AudioStreamPlayer.get_playback_position() >= 20:
+		$AudioStreamPlayer.play()
