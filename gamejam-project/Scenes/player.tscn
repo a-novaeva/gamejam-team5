@@ -1,9 +1,10 @@
-[gd_scene load_steps=16 format=3 uid="uid://ojqkh1fp1khg"]
+[gd_scene load_steps=17 format=3 uid="uid://ojqkh1fp1khg"]
 
 [ext_resource type="Script" uid="uid://dms58xbf5y0s2" path="res://Code/player.gd" id="1_cvnsp"]
 [ext_resource type="Texture2D" uid="uid://dl06kvnqy1i8v" path="res://Sprites/avaruusolio.png" id="2_6t5aa"]
 [ext_resource type="Texture2D" uid="uid://qd8i2jyibe2m" path="res://Sprites/avaruusolio_idle.png" id="3_6t5aa"]
 [ext_resource type="Texture2D" uid="uid://xsxyawvsreyf" path="res://Sprites/frog_skull.png" id="3_vgqql"]
+[ext_resource type="Texture2D" uid="uid://cmhex4eykngb3" path="res://Sprites/heart.png" id="5_fkybt"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fkybt"]
 atlas = ExtResource("3_6t5aa")
@@ -98,6 +99,8 @@ size = Vector2(20, 16.603931)
 [node name="Player" type="CharacterBody2D"]
 collision_mask = 60
 script = ExtResource("1_cvnsp")
+tile_size = null
+move_speed = null
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_ewoov")
@@ -122,6 +125,44 @@ target_position = Vector2(0, 20)
 collision_mask = 4
 collide_with_areas = true
 collide_with_bodies = false
+
+[node name="Healthbar" type="CanvasLayer" parent="."]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Healthbar"]
+offset_left = 15.0
+offset_top = 15.0
+offset_right = 241.0
+offset_bottom = 55.0
+
+[node name="Heart" type="TextureRect" parent="Healthbar/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("5_fkybt")
+expand_mode = 3
+stretch_mode = 2
+
+[node name="Heart2" type="TextureRect" parent="Healthbar/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("5_fkybt")
+expand_mode = 3
+stretch_mode = 2
+
+[node name="Heart3" type="TextureRect" parent="Healthbar/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("5_fkybt")
+expand_mode = 3
+stretch_mode = 2
+
+[node name="Heart4" type="TextureRect" parent="Healthbar/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("5_fkybt")
+expand_mode = 3
+stretch_mode = 2
+
+[node name="Heart5" type="TextureRect" parent="Healthbar/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("5_fkybt")
+expand_mode = 3
+stretch_mode = 2
 
 [connection signal="area_entered" from="PlatformDetector" to="." method="_on_platform_detector_area_entered"]
 [connection signal="area_exited" from="PlatformDetector" to="." method="_on_platform_detector_area_exited"]
