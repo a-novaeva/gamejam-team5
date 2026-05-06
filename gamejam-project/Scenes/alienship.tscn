@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://b057a2r5lxwa6"]
 
-[ext_resource type="Script" uid="uid://pb74lh1vrvla" path="res://Code/hazard.gd" id="1_0h56v"]
+[ext_resource type="Script" uid="uid://pb74lh1vrvla" path="res://Scenes/hazard.gd" id="1_0h56v"]
 [ext_resource type="Texture2D" uid="uid://b0l8jsvh64uy4" path="res://Sprites/alienship.png" id="1_22u1y"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0h56v"]
