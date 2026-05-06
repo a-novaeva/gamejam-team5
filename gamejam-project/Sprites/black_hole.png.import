@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dytafq4c3qs72"
-path="res://.godot/imported/astrohop_logo.png-7df45b6e3fe0275f9a9d9bac4a562d3c.ctex"
+uid="uid://ca5erljehr827"
+path="res://.godot/imported/black_hole.png-f5385e880eeb9bf513738551f16fc4ad.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scenes/astrohop_logo.png"
-dest_files=["res://.godot/imported/astrohop_logo.png-7df45b6e3fe0275f9a9d9bac4a562d3c.ctex"]
+source_file="res://Sprites/black_hole.png"
+dest_files=["res://.godot/imported/black_hole.png-f5385e880eeb9bf513738551f16fc4ad.ctex"]
 
 [params]
 

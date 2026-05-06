@@ -404,7 +404,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_yuqo8")
 }],
 "loop": true,
-"name": &"default",
+"name": &"planet",
 "speed": 5.0
 }]
 
@@ -435,9 +435,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -39.5
-offset_top = -50.5
+offset_top = -23.0
 offset_right = 39.5
-offset_bottom = 50.5
+offset_bottom = 78.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
@@ -495,13 +495,14 @@ animation = &"bling"
 autoplay = "bling"
 frame_progress = 0.70520926
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="Planet" type="AnimatedSprite2D" parent="."]
 position = Vector2(79.00001, 644.00006)
 scale = Vector2(1.31, 1.31)
 sprite_frames = SubResource("SpriteFrames_ifnak")
-autoplay = "default"
+animation = &"planet"
+autoplay = "planet"
 
 [connection signal="pressed" from="CanvasLayer/VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
-[connection signal="pressed" from="CanvasLayer/VBoxContainer/SettingsButton" to="." method="_on_settings_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/VBoxContainer/SettingsButton" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/SettingsButton" to="." method="_on_settings_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
