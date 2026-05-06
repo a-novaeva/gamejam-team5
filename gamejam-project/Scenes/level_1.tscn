@@ -1,17 +1,19 @@
-[gd_scene load_steps=9 format=3 uid="uid://rnk4rcy4lknc"]
+[gd_scene load_steps=10 format=3 uid="uid://rnk4rcy4lknc"]
 
 [ext_resource type="PackedScene" uid="uid://ojqkh1fp1khg" path="res://Scenes/player.tscn" id="1_vk57k"]
 [ext_resource type="PackedScene" uid="uid://dhh6qvsvlhvft" path="res://Scenes/spaceplatform3.tscn" id="2_8ffim"]
 [ext_resource type="Script" uid="uid://1fnlhfhkvwm" path="res://Code/platform.gd" id="3_xfk5q"]
 [ext_resource type="PackedScene" uid="uid://p80odyal5lgg" path="res://Scenes/static_platform.tscn" id="4_7p6j4"]
 [ext_resource type="PackedScene" uid="uid://b057a2r5lxwa6" path="res://Scenes/alienship.tscn" id="5_6444e"]
-[ext_resource type="Texture2D" uid="uid://dhdn5egfvncpk" path="res://Sprites/space_background.png" id="6_evi0p"]
+[ext_resource type="Texture2D" uid="uid://dhdn5egfvncpk" path="res://Textures/space_background.png" id="6_evi0p"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_7p6j4"]
 normal = Vector2(1, 0)
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_6444e"]
 normal = Vector2(-1, 0)
+
+[sub_resource type="TileSet" id="TileSet_evi0p"]
 
 [node name="Level1" type="Node"]
 
@@ -61,6 +63,10 @@ z_index = -10
 position = Vector2(382.5, 445.5)
 scale = Vector2(3.835, 4.4750004)
 texture = ExtResource("6_evi0p")
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_evi0p")
+format = 2
 
 [connection signal="body_entered" from="Boundary" to="Spacefrog" method="_on_boundary_body_entered"]
 [connection signal="body_entered" from="Hazards/Alienship" to="Spacefrog" method="_on_alienship_body_entered"]
