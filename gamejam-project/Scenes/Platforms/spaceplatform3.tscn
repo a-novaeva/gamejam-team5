@@ -1,5 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://dhh6qvsvlhvft"]
+[gd_scene load_steps=4 format=3 uid="uid://dhh6qvsvlhvft"]
 
+[ext_resource type="Script" uid="uid://1fnlhfhkvwm" path="res://Code/platform.gd" id="1_hukhj"]
 [ext_resource type="Texture2D" uid="uid://c6jx6pjdix2y6" path="res://Sprites/lautta.png" id="1_vpuvc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vpuvc"]
@@ -8,6 +9,7 @@ size = Vector2(91, 13)
 [node name="Spaceplatform3" type="Area2D"]
 collision_layer = 4
 collision_mask = 0
+script = ExtResource("1_hukhj")
 
 [node name="Lautta" type="Sprite2D" parent="."]
 position = Vector2(-29, 0)
