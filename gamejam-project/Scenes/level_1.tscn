@@ -1,14 +1,12 @@
-[gd_scene load_steps=21 format=4 uid="uid://rnk4rcy4lknc"]
+[gd_scene load_steps=19 format=4 uid="uid://rnk4rcy4lknc"]
 
 [ext_resource type="Script" uid="uid://bal5ty5sbmk3v" path="res://Code/level_manager.gd" id="1_af3po"]
 [ext_resource type="PackedScene" uid="uid://ojqkh1fp1khg" path="res://Scenes/player.tscn" id="1_vk57k"]
 [ext_resource type="PackedScene" uid="uid://dhh6qvsvlhvft" path="res://Scenes/Platforms/3-spaceplatform.tscn" id="2_8ffim"]
 [ext_resource type="PackedScene" uid="uid://ce00nxxafuxd3" path="res://Scenes/Platforms/1rockplatform.tscn" id="4_chwpn"]
 [ext_resource type="PackedScene" uid="uid://cv7is67ldkv2j" path="res://Scenes/Platforms/2rockplatform.tscn" id="5_6r07y"]
-[ext_resource type="PackedScene" uid="uid://b057a2r5lxwa6" path="res://Scenes/Hazards/alienship.tscn" id="5_6444e"]
-[ext_resource type="PackedScene" uid="uid://c1k6ulwokgefx" path="res://Scenes/Hazards/asteroid.tscn" id="7_xrdnt"]
+[ext_resource type="PackedScene" uid="uid://bjwx3yuk1xbxj" path="res://Scenes/Hazards/satellite.tscn" id="8_6r07y"]
 [ext_resource type="PackedScene" uid="uid://b6rvjrl3v45wp" path="res://Scenes/Hazards/alus.tscn" id="8_chwpn"]
-[ext_resource type="Script" uid="uid://pb74lh1vrvla" path="res://Code/hazard.gd" id="8_wrinw"]
 [ext_resource type="Texture2D" uid="uid://doo80gd7xl02b" path="res://Textures/space_background_2.png" id="9_wrinw"]
 [ext_resource type="TileSet" uid="uid://cpr4ony670uh0" path="res://Textures/astrohop.tres" id="10_chwpn"]
 [ext_resource type="AudioStream" uid="uid://c2b0an2h26u4t" path="res://Audio/level_3.wav" id="12_6r07y"]
@@ -119,21 +117,13 @@ polygon = PackedVector2Array(2, 90, 2, 150, 67, 151, 66, 119, 122, 118, 123, 150
 
 [node name="Hazards" type="Node2D" parent="."]
 
-[node name="Alienship" parent="Hazards" groups=["Hazards"] instance=ExtResource("5_6444e")]
-position = Vector2(164, 990)
-collision_mask = 0
-
-[node name="Asteroid" parent="Hazards" groups=["Hazards"] instance=ExtResource("7_xrdnt")]
-position = Vector2(98, 1060)
+[node name="Alus2" parent="Hazards" groups=["Hazards"] instance=ExtResource("8_chwpn")]
+position = Vector2(114, 400)
 collision_layer = 8
-collision_mask = 0
-script = ExtResource("8_wrinw")
-speed = -200.0
 
-[node name="Alus" parent="Hazards" groups=["Hazards"] instance=ExtResource("8_chwpn")]
-position = Vector2(74, 966)
-collision_layer = 8
-collision_mask = 0
+[node name="Sattelite" parent="Hazards" groups=["Hazards"] instance=ExtResource("8_6r07y")]
+position = Vector2(72, 432)
+speed = 75.0
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 z_index = -2
@@ -187,13 +177,8 @@ position = Vector2(544, 138)
 [node name="GoalPod5" parent="." instance=ExtResource("12_uy8f0")]
 position = Vector2(673, 138)
 
-[node name="Alus" parent="." groups=["Hazards"] instance=ExtResource("8_chwpn")]
-position = Vector2(114, 496)
-collision_layer = 8
+[node name="Alus" parent="." instance=ExtResource("8_chwpn")]
+position = Vector2(617, 336)
+speed = 50.0
 
 [connection signal="body_entered" from="Boundary" to="Spacefrog" method="_on_boundary_body_entered"]
-[connection signal="body_entered" from="Hazards/Alienship" to="Spacefrog" method="_on_alienship_body_entered"]
-[connection signal="body_entered" from="Hazards/Asteroid" to="Spacefrog" method="_on_asteroid_body_entered"]
-[connection signal="body_entered" from="Hazards/Alus" to="Spacefrog" method="_on_alus_body_entered"]
-
-[editable path="Hazards/Alienship"]
