@@ -195,6 +195,14 @@ velocity = Vector2(80, 0)
 position = Vector2(510, 292)
 velocity = Vector2(80, 0)
 
+[node name="3uusispaceplatform3" parent="Platforms" instance=ExtResource("9_8yhm2")]
+position = Vector2(135, 544)
+velocity = Vector2(80, 0)
+
+[node name="2uusispaceplatform2" parent="Platforms" instance=ExtResource("16_8i23i")]
+position = Vector2(489, 544)
+velocity = Vector2(80, 0)
+
 [node name="Boundary" type="Area2D" parent="." groups=["Boundary"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Boundary"]
