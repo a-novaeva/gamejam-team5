@@ -1,12 +1,23 @@
-[gd_scene load_steps=5 format=3 uid="uid://dcrohjt8innnw"]
+[gd_scene load_steps=7 format=3 uid="uid://dcrohjt8innnw"]
 
 [ext_resource type="Script" uid="uid://3siju60sci6m" path="res://Code/intro_scene.gd" id="1_d30j0"]
 [ext_resource type="Texture2D" uid="uid://doo80gd7xl02b" path="res://Textures/space_background_2.png" id="2_bbocs"]
 [ext_resource type="FontFile" uid="uid://blqe548smsopr" path="res://Fonts/Geo-Regular.ttf" id="3_lim1r"]
+[ext_resource type="AudioStream" uid="uid://nt453iuk1g3r" path="res://Audio/text.mp3" id="4_m538q"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lim1r"]
 texture = ExtResource("2_bbocs")
 modulate_color = Color(0.49354547, 0.49354553, 0.49354553, 1)
+
+[sub_resource type="GDScript" id="GDScript_aqy4q"]
+script/source = "extends AudioStreamPlayer
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass
+	
+"
 
 [node name="IntroScene" type="Control"]
 layout_mode = 3
@@ -62,3 +73,9 @@ grow_horizontal = 2
 grow_vertical = 0
 theme_override_fonts/font = ExtResource("3_lim1r")
 text = "Press SPACE or ENTER to skip"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_m538q")
+volume_db = -35.0
+autoplay = true
+script = SubResource("GDScript_aqy4q")

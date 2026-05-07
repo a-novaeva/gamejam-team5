@@ -11,16 +11,6 @@
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ce3w2"]
 texture = ExtResource("3_1ehe0")
 
-[sub_resource type="GDScript" id="GDScript_ce3w2"]
-script/source = "extends AudioStreamPlayer
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass
-	
-"
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_cp0ys"]
 atlas = ExtResource("6_opfnp")
 region = Rect2(0, 0, 64, 64)
@@ -408,6 +398,16 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="GDScript" id="GDScript_ce3w2"]
+script/source = "extends AudioStreamPlayer
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass
+	
+"
+
 [node name="MainMenu" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -488,12 +488,6 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("2_48xlc")
 text = "HARD"
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("4_ce3w2")
-volume_db = -10.0
-autoplay = true
-script = SubResource("GDScript_ce3w2")
-
 [node name="Logo" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = 8
@@ -530,6 +524,12 @@ scale = Vector2(1.31, 1.31)
 sprite_frames = SubResource("SpriteFrames_ifnak")
 animation = &"planet"
 autoplay = "planet"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_ce3w2")
+volume_db = -10.0
+autoplay = true
+script = SubResource("GDScript_ce3w2")
 
 [connection signal="pressed" from="CanvasLayer/MainMenuContainer/StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/MainMenuContainer/SettingsButton" to="." method="_on_settings_button_pressed"]
