@@ -262,7 +262,7 @@ position = Vector2(601, 720)
 position = Vector2(731, 816)
 speed = -500.0
 
-[node name="Asteroid3" parent="Hazards" instance=ExtResource("7_xrdnt")]
+[node name="Asteroid3" parent="Hazards" groups=["Hazards"] instance=ExtResource("7_xrdnt")]
 position = Vector2(748, 382)
 speed = -80.0
 
