@@ -15,5 +15,5 @@ func _on_goal_reached():
 		win_level()
 
 func win_level():
-	print("You Win!")
+	GameManager.total_score = ScoreSystem.current_score
 	get_tree().change_scene_to_file("res://Scenes/win_screen.tscn")

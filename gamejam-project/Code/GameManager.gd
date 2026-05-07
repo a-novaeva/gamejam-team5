@@ -1,7 +1,8 @@
 extends Node
 
 var current_difficulty: int = 0 
-
+var total_score: int = 0
+var final_score = 0
 var last_played_scene: String = ""
 
 func load_level(scene_path: String, difficulty_index: int):

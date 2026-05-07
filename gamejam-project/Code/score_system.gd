@@ -9,7 +9,7 @@ var current_score : int = 999
 func _ready():
 	# Display the initial score immediately
 	update_score_display()
-	
+	$ScoreLabel.text = "Final Score: " + str(GameManager.final_score)
 	# Connects the timer's signal via code so it triggers the function below
 	if not score_timer.timeout.is_connected(_on_score_timer_timeout):
 		score_timer.timeout.connect(_on_score_timer_timeout)

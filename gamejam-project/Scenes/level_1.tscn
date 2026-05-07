@@ -38,7 +38,7 @@ func _ready() -> void:
 "
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wrinw"]
-size = Vector2(768, 125)
+size = Vector2(768, 122.5)
 
 [node name="Level1" type="Node"]
 script = ExtResource("1_af3po")
@@ -53,76 +53,72 @@ z_index = -1
 
 [node name="1Rockplatform" parent="Platforms" instance=ExtResource("4_chwpn")]
 position = Vector2(448, 640)
-velocity = Vector2(0, 0)
+velocity = Vector2(-50, 0)
 
 [node name="3Spaceplatform1" parent="Platforms" instance=ExtResource("8_oovug")]
 position = Vector2(768, 608)
-velocity = Vector2(-35, 0)
+velocity = Vector2(60, 0)
 
 [node name="3Spaceplatform2" parent="Platforms" instance=ExtResource("8_oovug")]
 position = Vector2(48, 608)
-velocity = Vector2(50, 0)
+velocity = Vector2(60, 0)
 
 [node name="3Spaceplatform3" parent="Platforms" instance=ExtResource("8_oovug")]
 position = Vector2(324, 608)
-velocity = Vector2(50, 0)
+velocity = Vector2(60, 0)
 
 [node name="2Spaceplatform1" parent="Platforms" instance=ExtResource("13_6r07y")]
 position = Vector2(192, 608)
 collision_layer = 4
-velocity = Vector2(80, 0)
+velocity = Vector2(60, 0)
 
 [node name="Rockplatform3" parent="Platforms" instance=ExtResource("14_6ioyp")]
 position = Vector2(130, 576)
 collision_layer = 4
-velocity = Vector2(15, 0)
+velocity = Vector2(-50, 0)
 
 [node name="Spaceplatform2" parent="Platforms" instance=ExtResource("13_6r07y")]
 position = Vector2(506, 576)
 collision_layer = 4
-velocity = Vector2(-35, 0)
+velocity = Vector2(-50, 0)
 
 [node name="Spaceplatform9" parent="Platforms" instance=ExtResource("13_6r07y")]
 position = Vector2(341, 576)
 collision_layer = 4
-velocity = Vector2(-35, 0)
+velocity = Vector2(-50, 0)
 
 [node name="Rockplatform4" parent="Platforms" instance=ExtResource("14_6ioyp")]
 position = Vector2(777, 576)
 collision_layer = 4
-velocity = Vector2(-20, 0)
+velocity = Vector2(-50, 0)
 
 [node name="Rockplatform2" parent="Platforms" instance=ExtResource("5_6r07y")]
 position = Vector2(725, 544)
-velocity = Vector2(0, 0)
+velocity = Vector2(80, 0)
 
 [node name="Rockplatform5" parent="Platforms" instance=ExtResource("5_6r07y")]
 position = Vector2(15, 544)
-velocity = Vector2(0, 0)
+velocity = Vector2(80, 0)
 
 [node name="Rockplatform6" parent="Platforms" instance=ExtResource("5_6r07y")]
 position = Vector2(373, 544)
-velocity = Vector2(0, 0)
+velocity = Vector2(80, 0)
 
 [node name="Spaceplatform3" parent="Platforms" instance=ExtResource("8_oovug")]
 position = Vector2(59, 512)
-velocity = Vector2(40, 0)
+velocity = Vector2(-60, 0)
 
 [node name="Spaceplatform4" parent="Platforms" instance=ExtResource("8_oovug")]
 position = Vector2(177, 512)
-velocity = Vector2(60, 0)
+velocity = Vector2(-60, 0)
 
 [node name="Spaceplatform15" parent="Platforms" instance=ExtResource("8_oovug")]
 position = Vector2(370, 512)
-velocity = Vector2(60, 0)
+velocity = Vector2(-60, 0)
 
 [node name="Rockplatform7" parent="Platforms" instance=ExtResource("5_6r07y")]
 position = Vector2(713, 512)
-velocity = Vector2(20, 0)
-
-[node name="Spaceplatform5" parent="Platforms" instance=ExtResource("8_oovug")]
-position = Vector2(76, 289)
-velocity = Vector2(0, 0)
+velocity = Vector2(-60, 0)
 
 [node name="Spaceplatform6" parent="Platforms" instance=ExtResource("8_oovug")]
 position = Vector2(114, 256)
@@ -170,6 +166,7 @@ velocity = Vector2(-80, 0)
 
 [node name="Spaceplatform8" parent="Platforms" instance=ExtResource("8_oovug")]
 position = Vector2(368, 192)
+velocity = Vector2(-80, 0)
 
 [node name="Spaceplatform12" parent="Platforms" instance=ExtResource("8_oovug")]
 position = Vector2(230, 192)
@@ -202,6 +199,46 @@ velocity = Vector2(80, 0)
 [node name="2uusispaceplatform2" parent="Platforms" instance=ExtResource("16_8i23i")]
 position = Vector2(489, 544)
 velocity = Vector2(80, 0)
+
+[node name="3uusispaceplatform4" parent="Platforms" instance=ExtResource("9_8yhm2")]
+position = Vector2(1, 291)
+velocity = Vector2(80, 0)
+
+[node name="Rockplatform1" parent="Platforms" instance=ExtResource("4_chwpn")]
+position = Vector2(281, 544)
+velocity = Vector2(80, 0)
+
+[node name="Rockplatform15" parent="Platforms" instance=ExtResource("4_chwpn")]
+position = Vector2(627, 544)
+velocity = Vector2(80, 0)
+
+[node name="Spaceplatform5" parent="Platforms" instance=ExtResource("13_6r07y")]
+position = Vector2(568, 608)
+velocity = Vector2(60, 0)
+
+[node name="Rockplatform16" parent="Platforms" instance=ExtResource("5_6r07y")]
+position = Vector2(362, 640)
+velocity = Vector2(-50, 0)
+
+[node name="Rockplatform17" parent="Platforms" instance=ExtResource("14_6ioyp")]
+position = Vector2(180, 640)
+collision_layer = 4
+collision_mask = 1
+velocity = Vector2(-50, 0)
+
+[node name="Rockplatform18" parent="Platforms" instance=ExtResource("14_6ioyp")]
+position = Vector2(600, 640)
+collision_layer = 4
+collision_mask = 1
+velocity = Vector2(-50, 0)
+
+[node name="Rockplatform19" parent="Platforms" instance=ExtResource("4_chwpn")]
+position = Vector2(527, 640)
+velocity = Vector2(-50, 0)
+
+[node name="Rockplatform20" parent="Platforms" instance=ExtResource("5_6r07y")]
+position = Vector2(-13, 640)
+velocity = Vector2(-50, 0)
 
 [node name="Boundary" type="Area2D" parent="." groups=["Boundary"]]
 
@@ -270,6 +307,7 @@ collision_layer = 32
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Deadzone"]
+visible = false
 position = Vector2(384, 552)
 shape = SubResource("RectangleShape2D_wrinw")
 
@@ -279,7 +317,7 @@ collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Deadzone2"]
 visible = false
-position = Vector2(387, 225)
+position = Vector2(387, 223.75)
 shape = SubResource("RectangleShape2D_wrinw")
 
 [node name="GoalPod" parent="." instance=ExtResource("12_uy8f0")]

@@ -9,7 +9,6 @@ size = Vector2(54, 7)
 [node name="2uusispaceplatform" type="Area2D"]
 z_index = -1
 collision_layer = 4
-collision_mask = 0
 script = ExtResource("1_f4c01")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
