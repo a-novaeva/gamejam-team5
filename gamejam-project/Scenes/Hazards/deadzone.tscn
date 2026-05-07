@@ -1,7 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://cewlrxr64mnhh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wj0cd"]
-size = Vector2(778, 210)
+size = Vector2(739, 186)
 
 [node name="Deadzone" type="Area2D" groups=["Deadzone"]]
 

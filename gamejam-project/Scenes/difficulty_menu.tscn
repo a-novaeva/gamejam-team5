@@ -1,253 +1,211 @@
-[gd_scene load_steps=65 format=3 uid="uid://bcqrevqyfig7o"]
+[gd_scene load_steps=57 format=3 uid="uid://d18745gil17ha"]
 
-[ext_resource type="Script" uid="uid://d0x6fkp85fbj5" path="res://Code/main_menu.gd" id="1_28flt"]
-[ext_resource type="FontFile" uid="uid://cwkqvfv2of37" path="res://Fonts/Tiny5-Regular.ttf" id="2_48xlc"]
-[ext_resource type="Texture2D" uid="uid://cgath23po6lbe" path="res://Textures/space_background.png" id="3_1ehe0"]
-[ext_resource type="AudioStream" uid="uid://df5e34ctywvon" path="res://Audio/main_menu.wav" id="4_ce3w2"]
-[ext_resource type="Texture2D" uid="uid://brpuqbkibnf1s" path="res://astrohop_logo.png" id="5_n45e2"]
-[ext_resource type="Texture2D" uid="uid://dlxntsjno20ah" path="res://Sprites/bling.png" id="6_opfnp"]
-[ext_resource type="Texture2D" uid="uid://d1mm1qaajo3ng" path="res://Sprites/rotating_planet_spritesheet.png" id="7_cp0ys"]
+[ext_resource type="Script" uid="uid://c4rcxylyxd285" path="res://Code/difficulty_menu.gd" id="1_emv5m"]
+[ext_resource type="Texture2D" uid="uid://cgath23po6lbe" path="res://Textures/space_background.png" id="2_wvcst"]
+[ext_resource type="FontFile" uid="uid://cwkqvfv2of37" path="res://Fonts/Tiny5-Regular.ttf" id="3_jvoa5"]
+[ext_resource type="Texture2D" uid="uid://d1mm1qaajo3ng" path="res://Sprites/rotating_planet_spritesheet.png" id="4_7wgce"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ce3w2"]
-texture = ExtResource("3_1ehe0")
-
-[sub_resource type="GDScript" id="GDScript_ce3w2"]
-script/source = "extends AudioStreamPlayer
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass
-	
-"
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_cp0ys"]
-atlas = ExtResource("6_opfnp")
-region = Rect2(0, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_yhxw7"]
-atlas = ExtResource("6_opfnp")
-region = Rect2(64, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_trj04"]
-atlas = ExtResource("6_opfnp")
-region = Rect2(0, 64, 64, 64)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_16hvj"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_cp0ys")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_yhxw7")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_trj04")
-}],
-"loop": true,
-"name": &"bling",
-"speed": 1.0
-}]
+texture = ExtResource("2_wvcst")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_16hvj"]
-atlas = ExtResource("7_cp0ys")
+atlas = ExtResource("4_7wgce")
 region = Rect2(0, 0, 100, 100)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vr1f0"]
-atlas = ExtResource("7_cp0ys")
+atlas = ExtResource("4_7wgce")
 region = Rect2(100, 0, 100, 100)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_t1dhk"]
-atlas = ExtResource("7_cp0ys")
+atlas = ExtResource("4_7wgce")
 region = Rect2(200, 0, 100, 100)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5egv6"]
-atlas = ExtResource("7_cp0ys")
+atlas = ExtResource("4_7wgce")
 region = Rect2(300, 0, 100, 100)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vtepg"]
-atlas = ExtResource("7_cp0ys")
+atlas = ExtResource("4_7wgce")
 region = Rect2(400, 0, 100, 100)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8dnnj"]
-atlas = ExtResource("7_cp0ys")
+atlas = ExtResource("4_7wgce")
 region = Rect2(500, 0, 100, 100)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_m3bi6"]
-atlas = ExtResource("7_cp0ys")
+atlas = ExtResource("4_7wgce")
 region = Rect2(600, 0, 100, 100)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wyh8j"]
-atlas = ExtResource("7_cp0ys")
+atlas = ExtResource("4_7wgce")
 region = Rect2(700, 0, 100, 100)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ujyyl"]
-atlas = ExtResource("7_cp0ys")
+atlas = ExtResource("4_7wgce")
 region = Rect2(800, 0, 100, 100)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mkpwh"]
-atlas = ExtResource("7_cp0ys")
+atlas = ExtResource("4_7wgce")
 region = Rect2(900, 0, 100, 100)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4nkqq"]
-atlas = ExtResource("7_cp0ys")
+atlas = ExtResource("4_7wgce")
 region = Rect2(1000, 0, 100, 100)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ehtkc"]
-atlas = ExtResource("7_cp0ys")
+atlas = ExtResource("4_7wgce")
 region = Rect2(1100, 0, 100, 100)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6dk6o"]
-atlas = ExtResource("7_cp0ys")
+atlas = ExtResource("4_7wgce")
 region = Rect2(1200, 0, 100, 100)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jr6u5"]
-atlas = ExtResource("7_cp0ys")
+atlas = ExtResource("4_7wgce")
 region = Rect2(1300, 0, 100, 100)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6m47u"]
-atlas = ExtResource("7_cp0ys")
+atlas = ExtResource("4_7wgce")
 region = Rect2(1400, 0, 100, 100)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_84iac"]
-atlas = ExtResource("7_cp0ys")
+atlas = ExtResource("4_7wgce")
 region = Rect2(1500, 0, 100, 100)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5n0dv"]
-atlas = ExtResource("7_cp0ys")
+atlas = ExtResource("4_7wgce")
 region = Rect2(1600, 0, 100, 100)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ne6ao"]
-atlas = ExtResource("7_cp0ys")
+atlas = ExtResource("4_7wgce")
 region = Rect2(1700, 0, 100, 100)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tt8ml"]
-atlas = ExtResource("7_cp0ys")
+atlas = ExtResource("4_7wgce")
 region = Rect2(1800, 0, 100, 100)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fmarx"]
-atlas = ExtResource("7_cp0ys")
+atlas = ExtResource("4_7wgce")
 region = Rect2(1900, 0, 100, 100)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hkdq0"]
-atlas = ExtResource("7_cp0ys")
+atlas = ExtResource("4_7wgce")
 region = Rect2(2000, 0, 100, 100)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xcoo4"]
-atlas = ExtResource("7_cp0ys")
+atlas = ExtResource("4_7wgce")
 region = Rect2(2100, 0, 100, 100)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jw7lb"]
-atlas = ExtResource("7_cp0ys")
+atlas = ExtResource("4_7wgce")
 region = Rect2(2200, 0, 100, 100)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6vfk8"]
-atlas = ExtResource("7_cp0ys")
+atlas = ExtResource("4_7wgce")
 region = Rect2(2300, 0, 100, 100)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1xund"]
-atlas = ExtResource("7_cp0ys")
+atlas = ExtResource("4_7wgce")
 region = Rect2(2400, 0, 100, 100)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_msuys"]
-atlas = ExtResource("7_cp0ys")
+atlas = ExtResource("4_7wgce")
 region = Rect2(2500, 0, 100, 100)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_aylim"]
-atlas = ExtResource("7_cp0ys")
+atlas = ExtResource("4_7wgce")
 region = Rect2(2600, 0, 100, 100)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_y82t1"]
-atlas = ExtResource("7_cp0ys")
+atlas = ExtResource("4_7wgce")
 region = Rect2(2700, 0, 100, 100)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bmhhk"]
-atlas = ExtResource("7_cp0ys")
+atlas = ExtResource("4_7wgce")
 region = Rect2(2800, 0, 100, 100)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pddej"]
-atlas = ExtResource("7_cp0ys")
+atlas = ExtResource("4_7wgce")
 region = Rect2(2900, 0, 100, 100)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ko05x"]
-atlas = ExtResource("7_cp0ys")
+atlas = ExtResource("4_7wgce")
 region = Rect2(3000, 0, 100, 100)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_43km2"]
-atlas = ExtResource("7_cp0ys")
+atlas = ExtResource("4_7wgce")
 region = Rect2(3100, 0, 100, 100)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3533h"]
-atlas = ExtResource("7_cp0ys")
+atlas = ExtResource("4_7wgce")
 region = Rect2(3200, 0, 100, 100)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dp8uv"]
-atlas = ExtResource("7_cp0ys")
+atlas = ExtResource("4_7wgce")
 region = Rect2(3300, 0, 100, 100)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uu0lx"]
-atlas = ExtResource("7_cp0ys")
+atlas = ExtResource("4_7wgce")
 region = Rect2(3400, 0, 100, 100)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ujm45"]
-atlas = ExtResource("7_cp0ys")
+atlas = ExtResource("4_7wgce")
 region = Rect2(3500, 0, 100, 100)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_aj2v6"]
-atlas = ExtResource("7_cp0ys")
+atlas = ExtResource("4_7wgce")
 region = Rect2(3600, 0, 100, 100)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vj5y7"]
-atlas = ExtResource("7_cp0ys")
+atlas = ExtResource("4_7wgce")
 region = Rect2(3700, 0, 100, 100)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3l6me"]
-atlas = ExtResource("7_cp0ys")
+atlas = ExtResource("4_7wgce")
 region = Rect2(3800, 0, 100, 100)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_y17f6"]
-atlas = ExtResource("7_cp0ys")
+atlas = ExtResource("4_7wgce")
 region = Rect2(3900, 0, 100, 100)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hovqx"]
-atlas = ExtResource("7_cp0ys")
+atlas = ExtResource("4_7wgce")
 region = Rect2(4000, 0, 100, 100)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pavwk"]
-atlas = ExtResource("7_cp0ys")
+atlas = ExtResource("4_7wgce")
 region = Rect2(4100, 0, 100, 100)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4v5qc"]
-atlas = ExtResource("7_cp0ys")
+atlas = ExtResource("4_7wgce")
 region = Rect2(4200, 0, 100, 100)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_w71i6"]
-atlas = ExtResource("7_cp0ys")
+atlas = ExtResource("4_7wgce")
 region = Rect2(4300, 0, 100, 100)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tni0p"]
-atlas = ExtResource("7_cp0ys")
+atlas = ExtResource("4_7wgce")
 region = Rect2(4400, 0, 100, 100)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_m8avj"]
-atlas = ExtResource("7_cp0ys")
+atlas = ExtResource("4_7wgce")
 region = Rect2(4500, 0, 100, 100)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mldsx"]
-atlas = ExtResource("7_cp0ys")
+atlas = ExtResource("4_7wgce")
 region = Rect2(4600, 0, 100, 100)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gvnub"]
-atlas = ExtResource("7_cp0ys")
+atlas = ExtResource("4_7wgce")
 region = Rect2(4700, 0, 100, 100)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_u2gki"]
-atlas = ExtResource("7_cp0ys")
+atlas = ExtResource("4_7wgce")
 region = Rect2(4800, 0, 100, 100)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yuqo8"]
-atlas = ExtResource("7_cp0ys")
+atlas = ExtResource("4_7wgce")
 region = Rect2(4900, 0, 100, 100)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ifnak"]
@@ -408,14 +366,14 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="MainMenu" type="Control"]
+[node name="DifficultyMenu" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_28flt")
+script = ExtResource("1_emv5m")
 
 [node name="Background" type="Panel" parent="."]
 layout_mode = 1
@@ -428,7 +386,7 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_ce3w2")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="MainMenuContainer" type="VBoxContainer" parent="CanvasLayer"]
+[node name="DifficultyContainer2" type="VBoxContainer" parent="CanvasLayer"]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -443,70 +401,20 @@ grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="StartButton" type="Button" parent="CanvasLayer/MainMenuContainer"]
+[node name="Easy" type="Button" parent="CanvasLayer/DifficultyContainer2"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("2_48xlc")
-text = "START"
+theme_override_fonts/font = ExtResource("3_jvoa5")
+text = "EASY"
 
-[node name="SettingsButton" type="Button" parent="CanvasLayer/MainMenuContainer"]
-visible = false
+[node name="Normal" type="Button" parent="CanvasLayer/DifficultyContainer2"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("2_48xlc")
-text = "OPTIONS"
+theme_override_fonts/font = ExtResource("3_jvoa5")
+text = "NORMAL"
 
-[node name="QuitButton" type="Button" parent="CanvasLayer/MainMenuContainer"]
+[node name="Hard" type="Button" parent="CanvasLayer/DifficultyContainer2"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("2_48xlc")
-text = "EXIT"
-
-[node name="DifficultyContainer" type="VBoxContainer" parent="CanvasLayer"]
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="Easy" type="Button" parent="CanvasLayer/DifficultyContainer"]
-layout_mode = 2
-
-[node name="Normal" type="Button" parent="CanvasLayer/DifficultyContainer"]
-layout_mode = 2
-
-[node name="Hard" type="Button" parent="CanvasLayer/DifficultyContainer"]
-layout_mode = 2
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("4_ce3w2")
-volume_db = -10.0
-autoplay = true
-script = SubResource("GDScript_ce3w2")
-
-[node name="Logo" type="TextureRect" parent="."]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -353.0
-offset_top = -163.0
-offset_right = 358.078
-offset_bottom = -70.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("5_n45e2")
-expand_mode = 1
-
-[node name="Bling" type="AnimatedSprite2D" parent="Logo"]
-position = Vector2(5, 73)
-sprite_frames = SubResource("SpriteFrames_16hvj")
-animation = &"bling"
-autoplay = "bling"
-frame_progress = 0.70520926
-
-[node name="Bling2" type="AnimatedSprite2D" parent="Logo"]
-position = Vector2(698, 7)
-sprite_frames = SubResource("SpriteFrames_16hvj")
-animation = &"bling"
-autoplay = "bling"
-frame_progress = 0.70520926
+theme_override_fonts/font = ExtResource("3_jvoa5")
+text = "HARD"
 
 [node name="Planet" type="AnimatedSprite2D" parent="."]
 position = Vector2(79.00001, 644.00006)
@@ -515,7 +423,6 @@ sprite_frames = SubResource("SpriteFrames_ifnak")
 animation = &"planet"
 autoplay = "planet"
 
-[connection signal="pressed" from="CanvasLayer/MainMenuContainer/StartButton" to="." method="_on_start_button_pressed"]
-[connection signal="pressed" from="CanvasLayer/MainMenuContainer/SettingsButton" to="." method="_on_settings_button_pressed"]
-[connection signal="pressed" from="CanvasLayer/MainMenuContainer/SettingsButton" to="." method="_on_quit_button_pressed"]
-[connection signal="pressed" from="CanvasLayer/MainMenuContainer/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/DifficultyContainer2/Easy" to="." method="_on_easy_pressed"]
+[connection signal="pressed" from="CanvasLayer/DifficultyContainer2/Normal" to="." method="_on_normal_pressed"]
+[connection signal="pressed" from="CanvasLayer/DifficultyContainer2/Hard" to="." method="_on_hard_pressed"]
