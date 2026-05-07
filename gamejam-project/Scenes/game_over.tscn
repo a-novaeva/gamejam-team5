@@ -1,4 +1,4 @@
-[gd_scene load_steps=65 format=3 uid="uid://bq0aa3l3euf2f"]
+[gd_scene load_steps=64 format=3 uid="uid://bq0aa3l3euf2f"]
 
 [ext_resource type="Texture2D" uid="uid://bvlmkottcgo21" path="res://Textures/space_background_4.png" id="1_j3ryr"]
 [ext_resource type="Script" uid="uid://b6winkb4qjvtj" path="res://Code/game_over.gd" id="1_rjluv"]
@@ -398,16 +398,6 @@ animations = [{
 "speed": 1.0
 }]
 
-[sub_resource type="GDScript" id="GDScript_asocn"]
-script/source = "extends AudioStreamPlayer
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass
-	
-"
-
 [node name="Control" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -494,11 +484,10 @@ sprite_frames = SubResource("SpriteFrames_61f6c")
 animation = &"bling"
 autoplay = "bling"
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Logo"]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_rjluv")
 volume_db = -35.0
 autoplay = true
-script = SubResource("GDScript_asocn")
 
 [connection signal="pressed" from="CanvasLayer/VBoxContainer/TryAgain" to="." method="_on_try_again_pressed"]
 [connection signal="pressed" from="CanvasLayer/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]

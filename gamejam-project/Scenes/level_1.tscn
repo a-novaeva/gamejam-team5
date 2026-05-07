@@ -1,9 +1,9 @@
-[gd_scene load_steps=24 format=4 uid="uid://rnk4rcy4lknc"]
+[gd_scene load_steps=23 format=4 uid="uid://rnk4rcy4lknc"]
 
 [ext_resource type="Script" uid="uid://bal5ty5sbmk3v" path="res://Code/level_manager.gd" id="1_af3po"]
 [ext_resource type="PackedScene" uid="uid://ojqkh1fp1khg" path="res://Scenes/player.tscn" id="1_vk57k"]
-[ext_resource type="PackedScene" path="res://Scenes/Platforms/1rockplatform.tscn" id="4_chwpn"]
-[ext_resource type="PackedScene" path="res://Scenes/Platforms/2rockplatform.tscn" id="5_6r07y"]
+[ext_resource type="PackedScene" uid="uid://ce00nxxafuxd3" path="res://Scenes/Platforms/1rockplatform.tscn" id="4_chwpn"]
+[ext_resource type="PackedScene" uid="uid://cv7is67ldkv2j" path="res://Scenes/Platforms/2rockplatform.tscn" id="5_6r07y"]
 [ext_resource type="PackedScene" uid="uid://b057a2r5lxwa6" path="res://Scenes/Hazards/alienship.tscn" id="5_6444e"]
 [ext_resource type="PackedScene" uid="uid://c1k6ulwokgefx" path="res://Scenes/Hazards/asteroid.tscn" id="7_xrdnt"]
 [ext_resource type="PackedScene" uid="uid://bjwx3yuk1xbxj" path="res://Scenes/Hazards/satellite.tscn" id="8_6r07y"]
@@ -11,11 +11,10 @@
 [ext_resource type="PackedScene" uid="uid://d3uepg51rpi4n" path="res://Scenes/Platforms/spaceplatform3.tscn" id="8_oovug"]
 [ext_resource type="PackedScene" uid="uid://b72epmh5wwuw6" path="res://Scenes/Platforms/3uusispaceplatform.tscn" id="9_8yhm2"]
 [ext_resource type="Texture2D" uid="uid://doo80gd7xl02b" path="res://Textures/space_background_2.png" id="9_wrinw"]
-[ext_resource type="Script" path="res://Code/satellite.gd" id="10_8i23i"]
 [ext_resource type="TileSet" uid="uid://cpr4ony670uh0" path="res://Textures/astrohop.tres" id="10_chwpn"]
 [ext_resource type="PackedScene" uid="uid://do2cykr6teij6" path="res://Scenes/goal_pod.tscn" id="12_uy8f0"]
-[ext_resource type="PackedScene" path="res://Scenes/Platforms/2spaceplatform.tscn" id="13_6r07y"]
-[ext_resource type="PackedScene" path="res://Scenes/Platforms/3rockplatform.tscn" id="14_6ioyp"]
+[ext_resource type="PackedScene" uid="uid://c4adfc375gsua" path="res://Scenes/Platforms/2spaceplatform.tscn" id="13_6r07y"]
+[ext_resource type="PackedScene" uid="uid://dl068ln6uf7sb" path="res://Scenes/Platforms/3rockplatform.tscn" id="14_6ioyp"]
 [ext_resource type="AudioStream" uid="uid://tnb6e8hdtux2" path="res://Audio/level_1.wav" id="14_oovug"]
 [ext_resource type="PackedScene" uid="uid://cak2uxe27h22n" path="res://Scenes/Platforms/2uusispaceplatform.tscn" id="16_8i23i"]
 
@@ -216,7 +215,6 @@ collision_layer = 8
 
 [node name="Sattelite" parent="Hazards" groups=["Hazards"] instance=ExtResource("8_6r07y")]
 position = Vector2(72, 432)
-script = ExtResource("10_8i23i")
 
 [node name="Asteroid" parent="Hazards" groups=["Hazards"] instance=ExtResource("7_xrdnt")]
 position = Vector2(23, 848)
@@ -234,11 +232,9 @@ speed = -80.0
 
 [node name="Satellite" parent="Hazards" groups=["Hazards"] instance=ExtResource("8_6r07y")]
 position = Vector2(66, 752)
-script = ExtResource("10_8i23i")
 
 [node name="Satellite2" parent="Hazards" groups=["Hazards"] instance=ExtResource("8_6r07y")]
 position = Vector2(96, 784)
-script = ExtResource("10_8i23i")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 z_index = -2

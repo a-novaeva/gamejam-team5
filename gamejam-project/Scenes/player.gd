@@ -35,6 +35,7 @@ func take_damage():
 	if health <= 0:
 		$GameOverSound.play()
 		await get_tree().create_timer(1.2).timeout
+		print("Changing to Game Over...")
 		get_tree().change_scene_to_file("res://Scenes/game_over.tscn")
 	
 func update_heart_display():
