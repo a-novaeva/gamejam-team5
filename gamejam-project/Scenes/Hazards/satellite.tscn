@@ -1,0 +1,41 @@
+[gd_scene load_steps=7 format=3 uid="uid://bjwx3yuk1xbxj"]
+
+[ext_resource type="Texture2D" uid="uid://bql7tshfexrl3" path="res://Sprites/satellite.png" id="1_g1qc7"]
+[ext_resource type="Script" uid="uid://dgejg4mxol6rg" path="res://Scenes/Hazards/satellite.gd" id="1_o7bm4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o7bm4"]
+atlas = ExtResource("1_g1qc7")
+region = Rect2(0, 0, 22, 13)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dqt6n"]
+atlas = ExtResource("1_g1qc7")
+region = Rect2(0, 13, 22, 13)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_v3k7a"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o7bm4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dqt6n")
+}],
+"loop": true,
+"name": &"default",
+"speed": 3.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_87blx"]
+size = Vector2(22, 12)
+
+[node name="Satellite" type="Area2D"]
+collision_layer = 8
+script = ExtResource("1_o7bm4")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_v3k7a")
+autoplay = "default"
+frame_progress = 0.01016026
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_87blx")
