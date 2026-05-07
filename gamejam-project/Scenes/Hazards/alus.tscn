@@ -1,5 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://b6rvjrl3v45wp"]
+[gd_scene load_steps=4 format=3 uid="uid://b6rvjrl3v45wp"]
 
+[ext_resource type="Script" uid="uid://pb74lh1vrvla" path="res://Code/hazard.gd" id="1_jgtsb"]
 [ext_resource type="Texture2D" uid="uid://bp25mscsyim5s" path="res://Sprites/alus.png" id="1_xy7lx"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cfcco"]
@@ -7,6 +8,7 @@ radius = 8.0
 height = 32.0
 
 [node name="Alus" type="Area2D"]
+script = ExtResource("1_jgtsb")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_xy7lx")
