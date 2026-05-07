@@ -1,10 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://c1k6ulwokgefx"]
+[gd_scene load_steps=4 format=3 uid="uid://c1k6ulwokgefx"]
 
 [ext_resource type="Texture2D" uid="uid://crvrtly6fsln8" path="res://Sprites/asteroid.png" id="1_0tomg"]
+[ext_resource type="Script" uid="uid://pb74lh1vrvla" path="res://Code/hazard.gd" id="1_np2jd"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_a2bka"]
 
 [node name="Asteroid" type="Area2D"]
+collision_layer = 4
+script = ExtResource("1_np2jd")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_0tomg")
