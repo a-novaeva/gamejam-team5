@@ -48,12 +48,12 @@ move_speed = 0.15
 z_index = -1
 
 [node name="1Rockplatform" parent="Platforms" instance=ExtResource("2_hj5x7")]
-position = Vector2(448, 640)
+position = Vector2(128, 640)
 velocity = Vector2(0, 0)
 
 [node name="3Spaceplatform1" parent="Platforms" instance=ExtResource("7_ijtdf")]
 position = Vector2(768, 609)
-velocity = Vector2(-150, 0)
+velocity = Vector2(-80, 0)
 
 [node name="3Spaceplatform2" parent="Platforms" instance=ExtResource("7_ijtdf")]
 position = Vector2(48, 608)
@@ -71,7 +71,7 @@ velocity = Vector2(180, 0)
 [node name="Rockplatform3" parent="Platforms" instance=ExtResource("5_i6dbo")]
 position = Vector2(130, 576)
 collision_layer = 4
-velocity = Vector2(30, 0)
+velocity = Vector2(50, 0)
 
 [node name="Spaceplatform2" parent="Platforms" instance=ExtResource("4_fhuy1")]
 position = Vector2(506, 576)
@@ -81,12 +81,11 @@ velocity = Vector2(-80, 0)
 [node name="Spaceplatform9" parent="Platforms" instance=ExtResource("4_fhuy1")]
 position = Vector2(341, 576)
 collision_layer = 4
-velocity = Vector2(-50, 0)
 
 [node name="Rockplatform4" parent="Platforms" instance=ExtResource("5_i6dbo")]
 position = Vector2(777, 576)
 collision_layer = 4
-velocity = Vector2(-20, 0)
+velocity = Vector2(-90, 0)
 
 [node name="Rockplatform2" parent="Platforms" instance=ExtResource("6_e2piv")]
 position = Vector2(725, 544)
@@ -102,19 +101,27 @@ velocity = Vector2(0, 0)
 
 [node name="Spaceplatform3" parent="Platforms" instance=ExtResource("7_ijtdf")]
 position = Vector2(59, 512)
-velocity = Vector2(40, 0)
+velocity = Vector2(250, 0)
 
 [node name="Spaceplatform4" parent="Platforms" instance=ExtResource("7_ijtdf")]
 position = Vector2(177, 512)
-velocity = Vector2(60, 0)
+velocity = Vector2(250, 0)
 
 [node name="Rockplatform7" parent="Platforms" instance=ExtResource("6_e2piv")]
 position = Vector2(713, 512)
-velocity = Vector2(20, 0)
+velocity = Vector2(250, 0)
 
-[node name="Spaceplatform5" parent="Platforms" instance=ExtResource("7_ijtdf")]
-position = Vector2(76, 289)
-velocity = Vector2(0, 0)
+[node name="Spaceplatform5" parent="Platforms" instance=ExtResource("3_yvrk7")]
+position = Vector2(46, 289)
+velocity = Vector2(100, 0)
+
+[node name="Spaceplatform16" parent="Platforms" instance=ExtResource("3_yvrk7")]
+position = Vector2(376, 289)
+velocity = Vector2(100, 0)
+
+[node name="Spaceplatform15" parent="Platforms" instance=ExtResource("3_yvrk7")]
+position = Vector2(726, 289)
+velocity = Vector2(100, 0)
 
 [node name="Spaceplatform6" parent="Platforms" instance=ExtResource("7_ijtdf")]
 position = Vector2(114, 256)
@@ -214,6 +221,7 @@ speed = 50.0
 
 [node name="Asteroid4" parent="Hazards" groups=["Hazards"] instance=ExtResource("10_4k5rq")]
 position = Vector2(83, 801)
+speed = -150.0
 
 [node name="Asteroid5" parent="Hazards" groups=["Hazards"] instance=ExtResource("10_4k5rq")]
 position = Vector2(188, 771)
@@ -230,6 +238,18 @@ speed = 450.0
 [node name="Alienship3" parent="Hazards" groups=["Hazards"] instance=ExtResource("11_5jii6")]
 position = Vector2(617, 688)
 speed = 450.0
+
+[node name="Satellite" parent="Hazards" instance=ExtResource("9_sfey3")]
+position = Vector2(109, 368)
+speed = 500.0
+
+[node name="Satellite2" parent="Hazards" instance=ExtResource("9_sfey3")]
+position = Vector2(172, 368)
+speed = 500.0
+
+[node name="Alienship5" parent="Hazards" instance=ExtResource("11_5jii6")]
+position = Vector2(719, 336)
+speed = -800.0
 
 [node name="TileMapLayer2" type="TileMapLayer" parent="."]
 z_index = -2
