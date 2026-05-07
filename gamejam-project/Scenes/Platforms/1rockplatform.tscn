@@ -7,6 +7,7 @@
 size = Vector2(31, 11)
 
 [node name="Rockplatform1" type="Area2D"]
+collision_layer = 4
 script = ExtResource("2_eumtx")
 
 [node name="Kivilautta1" type="Sprite2D" parent="."]

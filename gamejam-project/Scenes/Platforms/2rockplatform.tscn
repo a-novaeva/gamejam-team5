@@ -4,9 +4,10 @@
 [ext_resource type="Script" uid="uid://1fnlhfhkvwm" path="res://Code/platform.gd" id="1_wlt5i"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fjliw"]
-size = Vector2(62, 10)
+size = Vector2(62, 11)
 
 [node name="Rockplatform2" type="Area2D"]
+collision_layer = 4
 script = ExtResource("1_wlt5i")
 
 [node name="Kivilautta1" type="Sprite2D" parent="."]
@@ -21,5 +22,5 @@ region_enabled = true
 region_rect = Rect2(0, 6.173151, 32.308815, 19.223179)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(15, -4)
+position = Vector2(15, 1.5)
 shape = SubResource("RectangleShape2D_fjliw")
