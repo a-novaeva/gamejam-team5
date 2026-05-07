@@ -29,4 +29,5 @@ text = "Score: 999"
 label_settings = SubResource("LabelSettings_v7q2s")
 
 [node name="ScoreTimer" type="Timer" parent="."]
+wait_time = 0.08
 autostart = true
