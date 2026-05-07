@@ -10,8 +10,6 @@ var is_moving: bool = false
 var target_position: Vector2 = Vector2.ZERO
 var current_platform: Area2D = null
 var respawn_position: Vector2
-var hearts_list : Array[TextureRect] = [] # joni hp
-var health = 5 # joni hp
 
 @onready var ray: RayCast2D = $RayCast2D
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
@@ -21,16 +19,7 @@ signal goal_reached
 func _ready() -> void:
 	respawn_position = position
 	target_position = position
-	var hearts_parent = $Healthbar/HBoxContainer
-	for child in hearts_parent.get_children():
-		hearts_list.append(child)
-	print(hearts_list)
 
-func take_damage(): # joni hp
-	if health > 0:
-		health -= 1
-		if $damage: $damage.play("damaged")
-		update_heart_display()
 		
 	if health <= 0:
 		$GameOverSound.play()
