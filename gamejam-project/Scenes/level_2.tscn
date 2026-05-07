@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=4 uid="uid://sa5d5bqxuamv"]
+[gd_scene load_steps=20 format=4 uid="uid://sa5d5bqxuamv"]
 
 [ext_resource type="PackedScene" uid="uid://ojqkh1fp1khg" path="res://Scenes/player.tscn" id="1_q0ycs"]
 [ext_resource type="TileSet" uid="uid://cpr4ony670uh0" path="res://Textures/astrohop.tres" id="1_v3rpw"]
@@ -6,21 +6,14 @@
 [ext_resource type="PackedScene" uid="uid://c4adfc375gsua" path="res://Scenes/Platforms/2spaceplatform.tscn" id="4_fhuy1"]
 [ext_resource type="PackedScene" uid="uid://dl068ln6uf7sb" path="res://Scenes/Platforms/3rockplatform.tscn" id="5_i6dbo"]
 [ext_resource type="PackedScene" uid="uid://cv7is67ldkv2j" path="res://Scenes/Platforms/2rockplatform.tscn" id="6_e2piv"]
-[ext_resource type="PackedScene" uid="uid://dhh6qvsvlhvft" path="res://Scenes/Platforms/spaceplatform3.tscn" id="7_ijtdf"]
-[ext_resource type="PackedScene" path="res://Scenes/Platforms/1rockplatform.tscn" id="2_hj5x7"]
-[ext_resource type="PackedScene" path="res://Scenes/Platforms/3-spaceplatform.tscn" id="3_yvrk7"]
-[ext_resource type="PackedScene" path="res://Scenes/Platforms/2spaceplatform.tscn" id="4_fhuy1"]
-[ext_resource type="PackedScene" path="res://Scenes/Platforms/3rockplatform.tscn" id="5_i6dbo"]
-[ext_resource type="PackedScene" path="res://Scenes/Platforms/2rockplatform.tscn" id="6_e2piv"]
 [ext_resource type="PackedScene" uid="uid://d3uepg51rpi4n" path="res://Scenes/Platforms/spaceplatform3.tscn" id="7_ijtdf"]
 [ext_resource type="PackedScene" uid="uid://b6rvjrl3v45wp" path="res://Scenes/Hazards/alus.tscn" id="8_c5xoi"]
-[ext_resource type="PackedScene" path="res://Scenes/Hazards/satellite.tscn" id="9_sfey3"]
+[ext_resource type="PackedScene" uid="uid://bjwx3yuk1xbxj" path="res://Scenes/Hazards/satellite.tscn" id="9_sfey3"]
 [ext_resource type="PackedScene" uid="uid://c1k6ulwokgefx" path="res://Scenes/Hazards/asteroid.tscn" id="10_4k5rq"]
 [ext_resource type="PackedScene" uid="uid://b057a2r5lxwa6" path="res://Scenes/Hazards/alienship.tscn" id="11_5jii6"]
 [ext_resource type="Texture2D" uid="uid://doo80gd7xl02b" path="res://Textures/space_background_2.png" id="13_d42f2"]
 [ext_resource type="AudioStream" uid="uid://4c2qh758wq0d" path="res://Audio/level_2.wav" id="13_q0ycs"]
 [ext_resource type="PackedScene" uid="uid://do2cykr6teij6" path="res://Scenes/goal_pod.tscn" id="15_kjoi8"]
-[ext_resource type="Script" path="res://Code/satellite.gd" id="15_q0ycs"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_nuasi"]
 normal = Vector2(1, 0)
@@ -208,7 +201,7 @@ position = Vector2(731, 816)
 speed = -250.0
 
 [node name="Asteroid3" parent="Hazards" groups=["Hazards"] instance=ExtResource("10_4k5rq")]
-position = Vector2(748, 382)
+position = Vector2(749, 382)
 speed = -80.0
 
 [node name="Alus" parent="Hazards" groups=["Hazards"] instance=ExtResource("8_c5xoi")]
@@ -290,7 +283,6 @@ position = Vector2(673, 138)
 
 [node name="Satellite" parent="." instance=ExtResource("9_sfey3")]
 position = Vector2(25, 432)
-script = ExtResource("15_q0ycs")
 
 [node name="Alienship" parent="." instance=ExtResource("11_5jii6")]
 position = Vector2(710, 368)
