@@ -18,7 +18,6 @@ config/icon="res://icon.svg"
 [autoload]
 
 ScoreSystem="*res://Scenes/score_system.tscn"
-GameManager="*res://Code/GameManager.gd"
 
 [display]
 

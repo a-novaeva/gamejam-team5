@@ -1,12 +1,15 @@
 extends Control
 
+
+var last_played_scene: String = ""
+
+func load_level(scene_path: String):
+	last_played_scene = scene_path
+	get_tree().change_scene_to_file(scene_path)
 	
 func _on_try_again_pressed() -> void:
-	if GameManager.last_played_scene != "":
-		get_tree().change_scene_to_file(GameManager.last_played_scene)
-		ScoreSystem.reset_game()
-	else:
-		get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")
+	ScoreSystem.reset_game()
+	get_tree().change_scene_to_file("res://Scenes/level_1.tscn")
 	
 func _on_quit_button_pressed() -> void:
 	get_tree().quit()

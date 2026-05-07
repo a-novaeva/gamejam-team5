@@ -8,9 +8,6 @@ func _ready():
 	main_menu_container.show()
 	difficulty_menu.hide()
 	ScoreSystem.hide()
-
-func start_game(level):
-	GameManager.current_difficulty = level
 	
 func _on_start_button_pressed():
 	main_menu_container.hide()
@@ -26,17 +23,16 @@ func _on_settings_button_pressed() -> void:
 func _on_easy_pressed() -> void:
 	ScoreSystem.show()
 	ScoreSystem.start_scoring()
-	GameManager.load_level("res://Scenes/level_1.tscn", 0)
+	get_tree().change_scene_to_file("res://Scenes/level_1.tscn")
 
 
 func _on_normal_pressed() -> void:
 	ScoreSystem.show()
 	ScoreSystem.start_scoring()
-	GameManager.load_level("res://Scenes/level_2.tscn", 1)
+	get_tree().change_scene_to_file("res://Scenes/level_2.tscn")
 
 
 func _on_hard_pressed() -> void:
 	ScoreSystem.show()
 	ScoreSystem.start_scoring()
-	GameManager.load_level("res://Scenes/level_3.tscn", 2)
 	pass # Replace with function body.
