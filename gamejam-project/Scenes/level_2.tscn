@@ -2,12 +2,12 @@
 
 [ext_resource type="PackedScene" uid="uid://ojqkh1fp1khg" path="res://Scenes/player.tscn" id="1_q0ycs"]
 [ext_resource type="TileSet" uid="uid://cpr4ony670uh0" path="res://Textures/astrohop.tres" id="1_v3rpw"]
-[ext_resource type="PackedScene" uid="uid://ce00nxxafuxd3" path="res://Scenes/Platforms/1rockplatform.tscn" id="2_hj5x7"]
-[ext_resource type="PackedScene" uid="uid://dhh6qvsvlhvft" path="res://Scenes/Platforms/3-spaceplatform.tscn" id="3_yvrk7"]
-[ext_resource type="PackedScene" uid="uid://c4adfc375gsua" path="res://Scenes/Platforms/2spaceplatform.tscn" id="4_fhuy1"]
-[ext_resource type="PackedScene" uid="uid://dl068ln6uf7sb" path="res://Scenes/Platforms/3rockplatform.tscn" id="5_i6dbo"]
-[ext_resource type="PackedScene" uid="uid://cv7is67ldkv2j" path="res://Scenes/Platforms/2rockplatform.tscn" id="6_e2piv"]
-[ext_resource type="PackedScene" path="res://Scenes/Platforms/spaceplatform3.tscn" id="7_ijtdf"]
+[ext_resource type="PackedScene" path="res://Scenes/Platforms/1rockplatform.tscn" id="2_hj5x7"]
+[ext_resource type="PackedScene" path="res://Scenes/Platforms/3-spaceplatform.tscn" id="3_yvrk7"]
+[ext_resource type="PackedScene" path="res://Scenes/Platforms/2spaceplatform.tscn" id="4_fhuy1"]
+[ext_resource type="PackedScene" path="res://Scenes/Platforms/3rockplatform.tscn" id="5_i6dbo"]
+[ext_resource type="PackedScene" path="res://Scenes/Platforms/2rockplatform.tscn" id="6_e2piv"]
+[ext_resource type="PackedScene" uid="uid://d3uepg51rpi4n" path="res://Scenes/Platforms/spaceplatform3.tscn" id="7_ijtdf"]
 [ext_resource type="PackedScene" uid="uid://b6rvjrl3v45wp" path="res://Scenes/Hazards/alus.tscn" id="8_c5xoi"]
 [ext_resource type="PackedScene" uid="uid://bjwx3yuk1xbxj" path="res://Scenes/Hazards/satellite.tscn" id="9_sfey3"]
 [ext_resource type="PackedScene" uid="uid://c1k6ulwokgefx" path="res://Scenes/Hazards/asteroid.tscn" id="10_4k5rq"]
@@ -207,6 +207,7 @@ speed = -80.0
 
 [node name="Alus" parent="Hazards" groups=["Hazards"] instance=ExtResource("8_c5xoi")]
 position = Vector2(617, 336)
+collision_layer = 8
 speed = 50.0
 
 [node name="Asteroid4" parent="Hazards" groups=["Hazards"] instance=ExtResource("10_4k5rq")]
