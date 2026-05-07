@@ -5,6 +5,7 @@ var goals_filled: int = 0
 
 func _ready():
 	$Spacefrog.goal_reached.connect(_on_goal_reached)
+	ScoreSystem.start_scoring()
 
 func _on_goal_reached():
 	goals_filled += 1

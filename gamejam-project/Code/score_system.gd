@@ -11,7 +11,8 @@ func _ready():
 	update_score_display()
 	
 	# Connects the timer's signal via code so it triggers the function below
-	score_timer.timeout.connect(_on_score_timer_timeout)
+	if not score_timer.timeout.is_connected(_on_score_timer_timeout):
+		score_timer.timeout.connect(_on_score_timer_timeout)
 
 func _on_score_timer_timeout():
 	current_score -= 1
@@ -26,6 +27,10 @@ func update_score_display():
 func reset_game():
 	current_score = 999
 
+func start_scoring():
+	current_score = 999
+	update_score_display()
+	score_timer.start()
 
 func trigger_game_over():
 	score_timer.stop()
