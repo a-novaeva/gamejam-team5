@@ -69,27 +69,22 @@ velocity = Vector2(60, 0)
 
 [node name="2Spaceplatform1" parent="Platforms" instance=ExtResource("13_6r07y")]
 position = Vector2(192, 608)
-collision_layer = 4
 velocity = Vector2(60, 0)
 
 [node name="Rockplatform3" parent="Platforms" instance=ExtResource("14_6ioyp")]
 position = Vector2(130, 576)
-collision_layer = 4
 velocity = Vector2(-50, 0)
 
 [node name="Spaceplatform2" parent="Platforms" instance=ExtResource("13_6r07y")]
 position = Vector2(506, 576)
-collision_layer = 4
 velocity = Vector2(-50, 0)
 
 [node name="Spaceplatform9" parent="Platforms" instance=ExtResource("13_6r07y")]
 position = Vector2(341, 576)
-collision_layer = 4
 velocity = Vector2(-50, 0)
 
 [node name="Rockplatform4" parent="Platforms" instance=ExtResource("14_6ioyp")]
 position = Vector2(777, 576)
-collision_layer = 4
 velocity = Vector2(-50, 0)
 
 [node name="Rockplatform2" parent="Platforms" instance=ExtResource("5_6r07y")]
@@ -222,14 +217,10 @@ velocity = Vector2(-50, 0)
 
 [node name="Rockplatform17" parent="Platforms" instance=ExtResource("14_6ioyp")]
 position = Vector2(180, 640)
-collision_layer = 4
-collision_mask = 1
 velocity = Vector2(-50, 0)
 
 [node name="Rockplatform18" parent="Platforms" instance=ExtResource("14_6ioyp")]
 position = Vector2(600, 640)
-collision_layer = 4
-collision_mask = 1
 velocity = Vector2(-50, 0)
 
 [node name="Rockplatform19" parent="Platforms" instance=ExtResource("4_chwpn")]
@@ -298,7 +289,6 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_wrinw")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("14_oovug")
-volume_db = -10.0
 autoplay = true
 script = SubResource("GDScript_6ioyp")
 

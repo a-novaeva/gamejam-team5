@@ -1,4 +1,4 @@
-[gd_scene load_steps=65 format=3 uid="uid://bcqrevqyfig7o"]
+[gd_scene load_steps=69 format=3 uid="uid://bcqrevqyfig7o"]
 
 [ext_resource type="Script" uid="uid://d0x6fkp85fbj5" path="res://Code/main_menu.gd" id="1_28flt"]
 [ext_resource type="FontFile" uid="uid://cwkqvfv2of37" path="res://Fonts/Tiny5-Regular.ttf" id="2_48xlc"]
@@ -7,9 +7,23 @@
 [ext_resource type="Texture2D" uid="uid://brpuqbkibnf1s" path="res://astrohop_logo.png" id="5_n45e2"]
 [ext_resource type="Texture2D" uid="uid://dlxntsjno20ah" path="res://Sprites/bling.png" id="6_opfnp"]
 [ext_resource type="Texture2D" uid="uid://d1mm1qaajo3ng" path="res://Sprites/rotating_planet_spritesheet.png" id="7_cp0ys"]
+[ext_resource type="Texture2D" uid="uid://dgqq2ldkeiofj" path="res://Textures/space_background_3.png" id="8_yhxw7"]
+[ext_resource type="Script" uid="uid://bqm7jsrvao7l" path="res://Code/volume_slider.gd" id="9_trj04"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ce3w2"]
 texture = ExtResource("3_1ehe0")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_trj04"]
+texture = ExtResource("8_yhxw7")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vr1f0"]
+content_margin_top = 3.0
+content_margin_bottom = 3.0
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cp0ys"]
 atlas = ExtResource("6_opfnp")
@@ -450,7 +464,6 @@ theme_override_fonts/font = ExtResource("2_48xlc")
 text = "START"
 
 [node name="SettingsButton" type="Button" parent="CanvasLayer/MainMenuContainer"]
-visible = false
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_48xlc")
 text = "OPTIONS"
@@ -487,6 +500,62 @@ text = "NORMAL"
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_48xlc")
 text = "HARD"
+
+[node name="SettingsUI" type="Panel" parent="CanvasLayer"]
+offset_right = 768.0
+offset_bottom = 896.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_trj04")
+
+[node name="VolumeSlider" type="HSlider" parent="CanvasLayer/SettingsUI"]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -125.0
+offset_top = -16.0
+offset_right = 125.0
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/slider = SubResource("StyleBoxFlat_vr1f0")
+max_value = 1.0
+step = 0.001
+script = ExtResource("9_trj04")
+
+[node name="BackButton" type="Button" parent="CanvasLayer/SettingsUI"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -24.0
+offset_top = 18.0
+offset_right = 24.0
+offset_bottom = 44.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_48xlc")
+text = "BACK"
+
+[node name="VolumeLabel" type="Label" parent="CanvasLayer/SettingsUI"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -59.0
+offset_top = -38.0
+offset_right = 75.0
+offset_bottom = -15.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_48xlc")
+text = "MASTER VOLUME"
 
 [node name="Logo" type="TextureRect" parent="."]
 layout_mode = 1
@@ -527,14 +596,14 @@ autoplay = "planet"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_ce3w2")
-volume_db = -10.0
 autoplay = true
 script = SubResource("GDScript_ce3w2")
 
 [connection signal="pressed" from="CanvasLayer/MainMenuContainer/StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/MainMenuContainer/SettingsButton" to="." method="_on_settings_button_pressed"]
-[connection signal="pressed" from="CanvasLayer/MainMenuContainer/SettingsButton" to="." method="_on_quit_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/MainMenuContainer/QuitButton" to="." method="_on_quit_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/DifficultyContainer/Easy" to="." method="_on_easy_pressed"]
 [connection signal="pressed" from="CanvasLayer/DifficultyContainer/Normal" to="." method="_on_normal_pressed"]
 [connection signal="pressed" from="CanvasLayer/DifficultyContainer/Hard" to="." method="_on_hard_pressed"]
+[connection signal="value_changed" from="CanvasLayer/SettingsUI/VolumeSlider" to="." method="_on_volume_slider_value_changed"]
+[connection signal="pressed" from="CanvasLayer/SettingsUI/BackButton" to="." method="_on_back_button_pressed"]

@@ -486,7 +486,7 @@ autoplay = "bling"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_rjluv")
-volume_db = -35.0
+volume_db = -25.0
 autoplay = true
 
 [connection signal="pressed" from="CanvasLayer/VBoxContainer/TryAgain" to="." method="_on_try_again_pressed"]
