@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://b72epmh5wwuw6"]
+
+[ext_resource type="Script" uid="uid://1fnlhfhkvwm" path="res://Code/platform.gd" id="1_h72x6"]
+[ext_resource type="Texture2D" uid="uid://dt627fg7jasli" path="res://Sprites/lautta4.png" id="2_5tsxw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5dkam"]
+size = Vector2(81, 6)
+
+[node name="3uusispaceplatform" type="Area2D"]
+z_index = -1
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("1_h72x6")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_5tsxw")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(27, 0)
+texture = ExtResource("2_5tsxw")
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+position = Vector2(54, 0)
+texture = ExtResource("2_5tsxw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(27.5, -6)
+shape = SubResource("RectangleShape2D_5dkam")

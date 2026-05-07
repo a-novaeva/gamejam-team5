@@ -7,12 +7,18 @@
 [ext_resource type="PackedScene" uid="uid://dl068ln6uf7sb" path="res://Scenes/Platforms/3rockplatform.tscn" id="5_i6dbo"]
 [ext_resource type="PackedScene" uid="uid://cv7is67ldkv2j" path="res://Scenes/Platforms/2rockplatform.tscn" id="6_e2piv"]
 [ext_resource type="PackedScene" uid="uid://dhh6qvsvlhvft" path="res://Scenes/Platforms/spaceplatform3.tscn" id="7_ijtdf"]
+[ext_resource type="PackedScene" path="res://Scenes/Platforms/1rockplatform.tscn" id="2_hj5x7"]
+[ext_resource type="PackedScene" path="res://Scenes/Platforms/3-spaceplatform.tscn" id="3_yvrk7"]
+[ext_resource type="PackedScene" path="res://Scenes/Platforms/2spaceplatform.tscn" id="4_fhuy1"]
+[ext_resource type="PackedScene" path="res://Scenes/Platforms/3rockplatform.tscn" id="5_i6dbo"]
+[ext_resource type="PackedScene" path="res://Scenes/Platforms/2rockplatform.tscn" id="6_e2piv"]
+[ext_resource type="PackedScene" uid="uid://d3uepg51rpi4n" path="res://Scenes/Platforms/spaceplatform3.tscn" id="7_ijtdf"]
 [ext_resource type="PackedScene" uid="uid://b6rvjrl3v45wp" path="res://Scenes/Hazards/alus.tscn" id="8_c5xoi"]
 [ext_resource type="PackedScene" path="res://Scenes/Hazards/satellite.tscn" id="9_sfey3"]
 [ext_resource type="PackedScene" uid="uid://c1k6ulwokgefx" path="res://Scenes/Hazards/asteroid.tscn" id="10_4k5rq"]
 [ext_resource type="PackedScene" uid="uid://b057a2r5lxwa6" path="res://Scenes/Hazards/alienship.tscn" id="11_5jii6"]
 [ext_resource type="Texture2D" uid="uid://doo80gd7xl02b" path="res://Textures/space_background_2.png" id="13_d42f2"]
-[ext_resource type="AudioStream" uid="uid://c2b0an2h26u4t" path="res://Audio/level_3.wav" id="14_nx14l"]
+[ext_resource type="AudioStream" uid="uid://4c2qh758wq0d" path="res://Audio/level_2.wav" id="13_q0ycs"]
 [ext_resource type="PackedScene" uid="uid://do2cykr6teij6" path="res://Scenes/goal_pod.tscn" id="15_kjoi8"]
 [ext_resource type="Script" path="res://Code/satellite.gd" id="15_q0ycs"]
 
@@ -246,7 +252,7 @@ grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_5s1wx")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("14_nx14l")
+stream = ExtResource("13_q0ycs")
 volume_db = -10.0
 autoplay = true
 script = SubResource("GDScript_27s1b")

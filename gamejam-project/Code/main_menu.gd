@@ -23,13 +23,13 @@ func _on_settings_button_pressed() -> void:
 func _on_easy_pressed() -> void:
 	ScoreSystem.show()
 	ScoreSystem.start_scoring()
-	get_tree().change_scene_to_file("res://Scenes/level_1.tscn")
+	GameManager.load_level("res://Scenes/level_1.tscn", 0)
 
 
 func _on_normal_pressed() -> void:
 	ScoreSystem.show()
 	ScoreSystem.start_scoring()
-	get_tree().change_scene_to_file("res://Scenes/level_2.tscn")
+	GameManager.load_level("res://Scenes/level_2.tscn", 1)
 
 
 func _on_hard_pressed() -> void:
