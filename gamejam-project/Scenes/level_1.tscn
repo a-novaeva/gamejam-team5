@@ -87,7 +87,31 @@ collision_mask = 0
 velocity = Vector2(0, 0)
 
 [node name="Rockplatform6" parent="Platforms" groups=["platforms"] instance=ExtResource("4_chwpn")]
-position = Vector2(222, 198)
+position = Vector2(225, 175)
+collision_layer = 4
+collision_mask = 0
+velocity = Vector2(0, 0)
+
+[node name="Rockplatform7" parent="Platforms" groups=["platforms"] instance=ExtResource("4_chwpn")]
+position = Vector2(223, 196)
+collision_layer = 4
+collision_mask = 0
+velocity = Vector2(0, 0)
+
+[node name="Rockplatform8" parent="Platforms" groups=["platforms"] instance=ExtResource("4_chwpn")]
+position = Vector2(223, 213)
+collision_layer = 4
+collision_mask = 0
+velocity = Vector2(0, 0)
+
+[node name="Rockplatform9" parent="Platforms" groups=["platforms"] instance=ExtResource("4_chwpn")]
+position = Vector2(218, 246)
+collision_layer = 4
+collision_mask = 0
+velocity = Vector2(0, 0)
+
+[node name="Rockplatform10" parent="Platforms" groups=["platforms"] instance=ExtResource("4_chwpn")]
+position = Vector2(219, 278)
 collision_layer = 4
 collision_mask = 0
 velocity = Vector2(0, 0)
@@ -185,7 +209,7 @@ collision_layer = 32
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Deadzone"]
-position = Vector2(384, 559.5)
+position = Vector2(384, 552)
 shape = SubResource("RectangleShape2D_wrinw")
 
 [node name="Deadzone2" type="Area2D" parent="." groups=["Deadzone"]]
@@ -193,7 +217,7 @@ collision_layer = 32
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Deadzone2"]
-position = Vector2(385, 225)
+position = Vector2(387, 225)
 shape = SubResource("RectangleShape2D_wrinw")
 
 [node name="GoalPod" parent="." instance=ExtResource("12_uy8f0")]
