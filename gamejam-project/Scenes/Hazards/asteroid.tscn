@@ -7,7 +7,6 @@
 [node name="Asteroid" type="Area2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-rotation = 3.1415927
 texture = ExtResource("1_0tomg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
