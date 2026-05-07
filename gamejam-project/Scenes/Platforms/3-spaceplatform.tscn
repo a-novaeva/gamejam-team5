@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://dhh6qvsvlhvft"]
+[gd_scene load_steps=4 format=3 uid="uid://md88snj3tq24"]
 
 [ext_resource type="Script" uid="uid://1fnlhfhkvwm" path="res://Code/platform.gd" id="1_hukhj"]
 [ext_resource type="Texture2D" uid="uid://c6jx6pjdix2y6" path="res://Sprites/lautta.png" id="1_vpuvc"]
