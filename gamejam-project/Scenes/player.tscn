@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://ojqkh1fp1khg"]
+[gd_scene load_steps=24 format=3 uid="uid://ojqkh1fp1khg"]
 
 [ext_resource type="Script" uid="uid://dms58xbf5y0s2" path="res://Code/player.gd" id="1_cvnsp"]
 [ext_resource type="Texture2D" uid="uid://dl06kvnqy1i8v" path="res://Sprites/avaruusolio.png" id="2_6t5aa"]
@@ -7,8 +7,11 @@
 [ext_resource type="Texture2D" uid="uid://cpmot8ndyv42u" path="res://Sprites/hud_life_dead.png" id="3_x3wgy"]
 [ext_resource type="Texture2D" uid="uid://bhj07ad3pi08" path="res://Sprites/hud_life_alive.png" id="5_fkybt"]
 [ext_resource type="AudioStream" uid="uid://bc17erp2855ow" path="res://Audio/game_over.mp3" id="7_3smsa"]
+[ext_resource type="Texture2D" uid="uid://c86yv8rgyv6lb" path="res://Textures/hud_fill.png" id="7_gymyn"]
+[ext_resource type="Texture2D" uid="uid://bpmucf7d1grh0" path="res://Textures/hud_border.png" id="7_tx1dd"]
 [ext_resource type="AudioStream" uid="uid://cik24lgpe7a5l" path="res://Audio/bleep.mp3" id="8_8erm5"]
 [ext_resource type="AudioStream" uid="uid://dfpfnxy6pvdyg" path="res://Audio/damage.mp3" id="9_f1ek2"]
+[ext_resource type="PackedScene" uid="uid://bmti512bflca5" path="res://Scenes/score_system.tscn" id="9_pu2lt"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fkybt"]
 atlas = ExtResource("3_6t5aa")
@@ -130,13 +133,38 @@ collision_mask = 4
 collide_with_areas = true
 collide_with_bodies = false
 
+[node name="HUDfill" type="CanvasLayer" parent="."]
+
+[node name="HUDFill" type="TextureRect" parent="HUDfill"]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("7_gymyn")
+
+[node name="HUDborder" type="CanvasLayer" parent="."]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HUDborder"]
+offset_top = 53.0
+offset_right = 799.0
+offset_bottom = 92.0
+theme_override_constants/separation = 0
+
+[node name="HUDborder" type="TextureRect" parent="HUDborder/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("7_tx1dd")
+expand_mode = 3
+
+[node name="HUDborder2" type="TextureRect" parent="HUDborder/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("7_tx1dd")
+expand_mode = 3
+
 [node name="Healthbar" type="CanvasLayer" parent="."]
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Healthbar"]
-offset_left = 16.0
-offset_top = 22.0
-offset_right = 242.0
-offset_bottom = 62.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 236.0
+offset_bottom = 50.0
 
 [node name="Heart" type="TextureRect" parent="Healthbar/HBoxContainer"]
 layout_mode = 2
@@ -162,6 +190,10 @@ expand_mode = 3
 layout_mode = 2
 texture = ExtResource("5_fkybt")
 expand_mode = 3
+
+[node name="ScoreSystem" type="CanvasLayer" parent="."]
+
+[node name="ScoreSystem" parent="ScoreSystem" instance=ExtResource("9_pu2lt")]
 
 [node name="GameOverSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("7_3smsa")
