@@ -1,6 +1,7 @@
 extends Area2D
 
 @export var velocity: Vector2 = Vector2(-100, 0)
+@export var is_rideable: bool = true
 
 var screen_min_x: float = -128.0
 var screen_max_x: float = 832.0

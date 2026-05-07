@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://c1k6ulwokgefx"]
+
+[ext_resource type="Texture2D" uid="uid://crvrtly6fsln8" path="res://Sprites/asteroid.png" id="1_0tomg"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_a2bka"]
+
+[node name="Asteroid" type="Area2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = 3.1415927
+texture = ExtResource("1_0tomg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_a2bka")

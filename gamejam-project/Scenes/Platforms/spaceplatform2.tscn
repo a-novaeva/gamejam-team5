@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://c4adfc375gsua"]
+
+[ext_resource type="Texture2D" uid="uid://c6jx6pjdix2y6" path="res://Sprites/lautta.png" id="1_a3w4g"]
+
+[node name="Spaceplatform2" type="Node2D"]
+
+[node name="Lautta" type="Sprite2D" parent="."]
+position = Vector2(33, 24)
+texture = ExtResource("1_a3w4g")
+region_enabled = true
+region_rect = Rect2(0, 7.3751926, 31.503971, 13.239759)
+
+[node name="Lautta2" type="Sprite2D" parent="."]
+position = Vector2(63, 24)
+texture = ExtResource("1_a3w4g")
+region_enabled = true
+region_rect = Rect2(0, 7.3751926, 31.503971, 13.239759)
