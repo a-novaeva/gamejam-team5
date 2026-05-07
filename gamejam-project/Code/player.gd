@@ -129,6 +129,7 @@ func check_goals() -> void:
 	for area in overlapping:
 		if area.is_in_group("GoalPods"):
 			if not area.is_occupied:
+				$GoalPodSound.play()
 				area.fill_goal()
 				reset_to_start()
 				goal_reached.emit()
