@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://ojqkh1fp1khg"]
+[gd_scene load_steps=21 format=3 uid="uid://ojqkh1fp1khg"]
 
 [ext_resource type="Script" uid="uid://dms58xbf5y0s2" path="res://Code/player.gd" id="1_cvnsp"]
 [ext_resource type="Texture2D" uid="uid://dl06kvnqy1i8v" path="res://Sprites/avaruusolio.png" id="2_6t5aa"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://bhj07ad3pi08" path="res://Sprites/hud_life_alive.png" id="5_fkybt"]
 [ext_resource type="AudioStream" uid="uid://bc17erp2855ow" path="res://Audio/game_over.mp3" id="7_3smsa"]
 [ext_resource type="AudioStream" uid="uid://cik24lgpe7a5l" path="res://Audio/bleep.mp3" id="8_8erm5"]
+[ext_resource type="AudioStream" uid="uid://dfpfnxy6pvdyg" path="res://Audio/damage.mp3" id="9_f1ek2"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fkybt"]
 atlas = ExtResource("3_6t5aa")
@@ -168,6 +169,10 @@ volume_db = -10.0
 
 [node name="GoalPodSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("8_8erm5")
+volume_db = -10.0
+
+[node name="DamageSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_f1ek2")
 volume_db = -10.0
 
 [connection signal="area_entered" from="PlatformDetector" to="." method="_on_platform_detector_area_entered"]
