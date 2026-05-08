@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=4 uid="uid://bkxd7ckb52yl3"]
+[gd_scene load_steps=20 format=4 uid="uid://bkxd7ckb52yl3"]
 
 [ext_resource type="PackedScene" uid="uid://ojqkh1fp1khg" path="res://Scenes/player.tscn" id="1_fxnjf"]
 [ext_resource type="PackedScene" uid="uid://ce00nxxafuxd3" path="res://Scenes/Platforms/1rockplatform.tscn" id="2_xjeco"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://doo80gd7xl02b" path="res://Textures/space_background_2.png" id="11_2awvy"]
 [ext_resource type="AudioStream" uid="uid://c2b0an2h26u4t" path="res://Audio/level_3.wav" id="12_fxnjf"]
 [ext_resource type="PackedScene" uid="uid://do2cykr6teij6" path="res://Scenes/goal_pod.tscn" id="13_gmj2a"]
+[ext_resource type="PackedScene" uid="uid://elu1nbeeoi33" path="res://Scenes/Platforms/1spaceplatform.tscn" id="14_fxnjf"]
 [ext_resource type="PackedScene" uid="uid://bjwx3yuk1xbxj" path="res://Scenes/Hazards/satellite.tscn" id="14_n8e0l"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_3oi3s"]
@@ -113,39 +114,44 @@ position = Vector2(769, 512)
 velocity = Vector2(200, 0)
 
 [node name="Spaceplatform5" parent="Platforms" instance=ExtResource("3_j77fg")]
-position = Vector2(76, 289)
-velocity = Vector2(0, 0)
+position = Vector2(130, 289)
+velocity = Vector2(200, 0)
 
-[node name="Spaceplatform6" parent="Platforms" instance=ExtResource("3_j77fg")]
-position = Vector2(114, 256)
-velocity = Vector2(100, 0)
+[node name="Spaceplatform17" parent="Platforms" instance=ExtResource("3_j77fg")]
+position = Vector2(250, 289)
+velocity = Vector2(200, 0)
+
+[node name="Spaceplatform18" parent="Platforms" instance=ExtResource("3_j77fg")]
+position = Vector2(368, 289)
+velocity = Vector2(200, 0)
+
+[node name="Spaceplatform19" parent="Platforms" instance=ExtResource("3_j77fg")]
+position = Vector2(488, 289)
+velocity = Vector2(200, 0)
+
+[node name="Spaceplatform20" parent="Platforms" instance=ExtResource("3_j77fg")]
+position = Vector2(604, 289)
+velocity = Vector2(200, 0)
+
+[node name="Spaceplatform21" parent="Platforms" instance=ExtResource("3_j77fg")]
+position = Vector2(724, 289)
+velocity = Vector2(200, 0)
+
+[node name="Spaceplatform22" parent="Platforms" instance=ExtResource("3_j77fg")]
+position = Vector2(837, 289)
+velocity = Vector2(200, 0)
 
 [node name="Rockplatform8" parent="Platforms" instance=ExtResource("6_kgmqw")]
 position = Vector2(747, 256)
-velocity = Vector2(80, 0)
+velocity = Vector2(300, 0)
+
+[node name="Rockplatform17" parent="Platforms" instance=ExtResource("6_kgmqw")]
+position = Vector2(661, 256)
+velocity = Vector2(300, 0)
 
 [node name="Rockplatform12" parent="Platforms" instance=ExtResource("6_kgmqw")]
 position = Vector2(569, 256)
-velocity = Vector2(80, 0)
-
-[node name="Rockplatform9" parent="Platforms" instance=ExtResource("6_kgmqw")]
-position = Vector2(177, 224)
-
-[node name="Rockplatform10" parent="Platforms" instance=ExtResource("6_kgmqw")]
-position = Vector2(266, 224)
-velocity = Vector2(40, 0)
-
-[node name="Rockplatform13" parent="Platforms" instance=ExtResource("6_kgmqw")]
-position = Vector2(731, 224)
-velocity = Vector2(40, 0)
-
-[node name="Rockplatform14" parent="Platforms" instance=ExtResource("6_kgmqw")]
-position = Vector2(617, 224)
-velocity = Vector2(-80, 0)
-
-[node name="Rockplatform11" parent="Platforms" instance=ExtResource("6_kgmqw")]
-position = Vector2(504, 224)
-velocity = Vector2(-120, 0)
+velocity = Vector2(300, 0)
 
 [node name="Spaceplatform7" parent="Platforms" instance=ExtResource("3_j77fg")]
 position = Vector2(542, 192)
@@ -168,9 +174,6 @@ position = Vector2(230, 192)
 
 [node name="Spaceplatform13" parent="Platforms" instance=ExtResource("3_j77fg")]
 position = Vector2(-37, 192)
-
-[node name="Spaceplatform14" parent="Platforms" instance=ExtResource("3_j77fg")]
-position = Vector2(368, 256)
 
 [node name="Rockplatform15" parent="Platforms" instance=ExtResource("6_kgmqw")]
 position = Vector2(101, 640)
@@ -195,6 +198,74 @@ velocity = Vector2(100, 0)
 [node name="Rockplatform4" parent="Platforms" instance=ExtResource("6_kgmqw")]
 position = Vector2(161, 578)
 velocity = Vector2(100, 0)
+
+[node name="Spaceplatform6" parent="Platforms" instance=ExtResource("4_ki8bc")]
+position = Vector2(479, 256)
+velocity = Vector2(-200, 0)
+
+[node name="Spaceplatform14" parent="Platforms" instance=ExtResource("4_ki8bc")]
+position = Vector2(384, 256)
+velocity = Vector2(-200, 0)
+
+[node name="Spaceplatform23" parent="Platforms" instance=ExtResource("4_ki8bc")]
+position = Vector2(296, 256)
+velocity = Vector2(-200, 0)
+
+[node name="Rockplatform1" parent="Platforms" instance=ExtResource("2_xjeco")]
+position = Vector2(312, 225)
+velocity = Vector2(-50, 0)
+
+[node name="Rockplatform6" parent="Platforms" instance=ExtResource("2_xjeco")]
+position = Vector2(188, 225)
+velocity = Vector2(-50, 0)
+
+[node name="Rockplatform7" parent="Platforms" instance=ExtResource("2_xjeco")]
+position = Vector2(65, 225)
+velocity = Vector2(-50, 0)
+
+[node name="Rockplatform9" parent="Platforms" instance=ExtResource("2_xjeco")]
+position = Vector2(-62, 224)
+velocity = Vector2(-50, 0)
+
+[node name="Rockplatform10" parent="Platforms" instance=ExtResource("2_xjeco")]
+position = Vector2(444, 224)
+velocity = Vector2(-50, 0)
+
+[node name="Rockplatform11" parent="Platforms" instance=ExtResource("2_xjeco")]
+position = Vector2(560, 224)
+velocity = Vector2(-50, 0)
+
+[node name="Rockplatform13" parent="Platforms" instance=ExtResource("2_xjeco")]
+position = Vector2(708, 224)
+velocity = Vector2(-50, 0)
+
+[node name="Spaceplatform1" parent="Platforms" instance=ExtResource("14_fxnjf")]
+position = Vector2(247, 220)
+velocity = Vector2(50, 0)
+
+[node name="Spaceplatform24" parent="Platforms" instance=ExtResource("14_fxnjf")]
+position = Vector2(131, 220)
+velocity = Vector2(50, 0)
+
+[node name="Spaceplatform25" parent="Platforms" instance=ExtResource("14_fxnjf")]
+position = Vector2(-1, 221)
+velocity = Vector2(50, 0)
+
+[node name="Spaceplatform26" parent="Platforms" instance=ExtResource("14_fxnjf")]
+position = Vector2(394, 221)
+velocity = Vector2(50, 0)
+
+[node name="Spaceplatform27" parent="Platforms" instance=ExtResource("14_fxnjf")]
+position = Vector2(504, 220)
+velocity = Vector2(50, 0)
+
+[node name="Spaceplatform28" parent="Platforms" instance=ExtResource("14_fxnjf")]
+position = Vector2(633, 220)
+velocity = Vector2(50, 0)
+
+[node name="Spaceplatform29" parent="Platforms" instance=ExtResource("14_fxnjf")]
+position = Vector2(784, 221)
+velocity = Vector2(50, 0)
 
 [node name="Boundary" type="Area2D" parent="." groups=["Boundary"]]
 
@@ -265,6 +336,10 @@ position = Vector2(10, 656)
 
 [node name="Satellite3" parent="Hazards" groups=["Hazards"] instance=ExtResource("14_n8e0l")]
 position = Vector2(686, 656)
+
+[node name="Alienship6" parent="Hazards" instance=ExtResource("9_hed5s")]
+position = Vector2(733, 299)
+speed = 600.0
 
 [node name="TileMapLayer2" type="TileMapLayer" parent="."]
 z_index = -2
