@@ -14,6 +14,7 @@ anchor_right = 1.0
 offset_top = -3.0
 offset_bottom = -3.0
 grow_horizontal = 0
+scale = Vector2(0.7, 0.7)
 script = ExtResource("1_i064m")
 
 [node name="ScoreLabel" type="Label" parent="."]
@@ -22,9 +23,10 @@ layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -157.0
-offset_top = 14.0
-offset_bottom = 59.0
+offset_left = -169.99995
+offset_top = 28.571428
+offset_right = -21.714249
+offset_bottom = 64.57143
 grow_horizontal = 0
 theme_override_colors/font_color = Color(0.16078432, 1, 1, 1)
 theme_override_fonts/font = ExtResource("2_v7q2s")

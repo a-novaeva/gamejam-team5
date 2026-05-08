@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://ojqkh1fp1khg"]
+[gd_scene load_steps=26 format=3 uid="uid://ojqkh1fp1khg"]
 
 [ext_resource type="Script" uid="uid://dms58xbf5y0s2" path="res://Scenes/player.gd" id="1_cvnsp"]
 [ext_resource type="Texture2D" uid="uid://dl06kvnqy1i8v" path="res://Sprites/avaruusolio.png" id="2_6t5aa"]
@@ -9,8 +9,10 @@
 [ext_resource type="AudioStream" uid="uid://bc17erp2855ow" path="res://Audio/game_over.mp3" id="7_3smsa"]
 [ext_resource type="Texture2D" uid="uid://c86yv8rgyv6lb" path="res://Textures/hud_fill.png" id="7_gymyn"]
 [ext_resource type="Texture2D" uid="uid://bpmucf7d1grh0" path="res://Textures/hud_border.png" id="7_tx1dd"]
+[ext_resource type="Texture2D" uid="uid://btco367wu1rju" path="res://Textures/hud_screen_score.png" id="8_7dp3o"]
 [ext_resource type="AudioStream" uid="uid://cik24lgpe7a5l" path="res://Audio/bleep.mp3" id="8_8erm5"]
 [ext_resource type="AudioStream" uid="uid://dfpfnxy6pvdyg" path="res://Audio/damage.mp3" id="9_f1ek2"]
+[ext_resource type="Texture2D" uid="uid://dbqao0sbg0wqr" path="res://Textures/hud_screen_hp.png" id="9_h4iuc"]
 [ext_resource type="PackedScene" uid="uid://bmti512bflca5" path="res://Scenes/score_system.tscn" id="9_pu2lt"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fkybt"]
@@ -136,9 +138,30 @@ collide_with_bodies = false
 [node name="HUDfill" type="CanvasLayer" parent="."]
 
 [node name="HUDFill" type="TextureRect" parent="HUDfill"]
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 768.0
+offset_bottom = 60.0
 texture = ExtResource("7_gymyn")
+
+[node name="HUDScreenScore" type="TextureRect" parent="HUDfill"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -132.0
+offset_top = 7.0
+offset_right = -8.21814
+offset_bottom = 53.0
+grow_horizontal = 0
+texture = ExtResource("8_7dp3o")
+expand_mode = 1
+flip_v = true
+
+[node name="HUDScreenHealth" type="TextureRect" parent="HUDfill"]
+offset_left = 9.0
+offset_top = 6.0
+offset_right = 201.0
+offset_bottom = 53.0
+texture = ExtResource("9_h4iuc")
+expand_mode = 1
 
 [node name="HUDborder" type="CanvasLayer" parent="."]
 
@@ -161,15 +184,15 @@ expand_mode = 3
 [node name="Healthbar" type="CanvasLayer" parent="."]
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Healthbar"]
-offset_left = 10.0
-offset_top = 10.0
-offset_right = 236.0
-offset_bottom = 50.0
+offset_left = 21.0
+offset_top = 16.0
+offset_right = 187.0
+offset_bottom = 46.0
 
 [node name="Heart" type="TextureRect" parent="Healthbar/HBoxContainer"]
 layout_mode = 2
 texture = ExtResource("5_fkybt")
-expand_mode = 3
+expand_mode = 2
 
 [node name="Heart2" type="TextureRect" parent="Healthbar/HBoxContainer"]
 layout_mode = 2

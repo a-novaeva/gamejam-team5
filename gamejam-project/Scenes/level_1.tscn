@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=4 uid="uid://rnk4rcy4lknc"]
+[gd_scene load_steps=24 format=4 uid="uid://rnk4rcy4lknc"]
 
 [ext_resource type="Script" uid="uid://bal5ty5sbmk3v" path="res://Code/level_manager.gd" id="1_af3po"]
 [ext_resource type="PackedScene" uid="uid://ojqkh1fp1khg" path="res://Scenes/player.tscn" id="1_vk57k"]
@@ -17,8 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://dl068ln6uf7sb" path="res://Scenes/Platforms/3rockplatform.tscn" id="14_6ioyp"]
 [ext_resource type="AudioStream" uid="uid://tnb6e8hdtux2" path="res://Audio/level_1.wav" id="14_oovug"]
 [ext_resource type="PackedScene" uid="uid://cak2uxe27h22n" path="res://Scenes/Platforms/2uusispaceplatform.tscn" id="16_8i23i"]
-[ext_resource type="PackedScene" uid="uid://f3yb0eudplxc" path="res://Scenes/pause_layer.tscn" id="18_pjppf"]
-[ext_resource type="Script" uid="uid://vpibg3wjswt1" path="res://Code/PauseSystem.gd" id="19_yltlr"]
+[ext_resource type="PackedScene" path="res://Scenes/pause_layer.tscn" id="18_pjppf"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_7p6j4"]
 normal = Vector2(1, 0)
@@ -333,15 +332,7 @@ position = Vector2(544, 138)
 position = Vector2(673, 138)
 
 [node name="PauseLayer" parent="." instance=ExtResource("18_pjppf")]
-script = ExtResource("19_yltlr")
 
 [connection signal="body_entered" from="Boundary" to="Spacefrog" method="_on_boundary_body_entered"]
-[connection signal="pressed" from="PauseLayer/PauseMenu/SettingsButton" to="PauseLayer" method="_on_settings_button_pressed"]
-[connection signal="pressed" from="PauseLayer/PauseMenu/Resume" to="PauseLayer" method="_on_resume_pressed"]
-[connection signal="pressed" from="PauseLayer/PauseMenu/MainMenuButton" to="PauseLayer" method="_on_main_menu_button_pressed"]
-[connection signal="drag_ended" from="PauseLayer/SettingsUI/VolumeSlider" to="PauseLayer" method="_on_volume_slider_drag_ended"]
-[connection signal="drag_started" from="PauseLayer/SettingsUI/VolumeSlider" to="PauseLayer" method="_on_volume_slider_drag_started"]
-[connection signal="value_changed" from="PauseLayer/SettingsUI/VolumeSlider" to="PauseLayer" method="_on_volume_slider_value_changed"]
-[connection signal="pressed" from="PauseLayer/SettingsUI/BackButton" to="PauseLayer" method="_on_back_button_pressed"]
 
 [editable path="PauseLayer"]
