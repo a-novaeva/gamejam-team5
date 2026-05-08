@@ -135,14 +135,14 @@ collision_mask = 4
 collide_with_areas = true
 collide_with_bodies = false
 
-[node name="HUDfill" type="CanvasLayer" parent="."]
+[node name="HUD" type="CanvasLayer" parent="."]
 
-[node name="HUDFill" type="TextureRect" parent="HUDfill"]
+[node name="HUDBackground" type="TextureRect" parent="HUD"]
 offset_right = 768.0
 offset_bottom = 60.0
 texture = ExtResource("7_gymyn")
 
-[node name="HUDScreenScore" type="TextureRect" parent="HUDfill"]
+[node name="HUDScreenScore" type="TextureRect" parent="HUD"]
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
@@ -155,7 +155,7 @@ texture = ExtResource("8_7dp3o")
 expand_mode = 1
 flip_v = true
 
-[node name="HUDScreenHealth" type="TextureRect" parent="HUDfill"]
+[node name="HUDScreenHealth" type="TextureRect" parent="HUD"]
 offset_left = 9.0
 offset_top = 6.0
 offset_right = 201.0
@@ -184,10 +184,10 @@ expand_mode = 3
 [node name="Healthbar" type="CanvasLayer" parent="."]
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Healthbar"]
-offset_left = 21.0
+offset_left = 29.0
 offset_top = 16.0
-offset_right = 187.0
-offset_bottom = 46.0
+offset_right = 192.0
+offset_bottom = 43.0
 
 [node name="Heart" type="TextureRect" parent="Healthbar/HBoxContainer"]
 layout_mode = 2
