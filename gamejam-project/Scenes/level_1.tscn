@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=4 uid="uid://rnk4rcy4lknc"]
+[gd_scene load_steps=29 format=4 uid="uid://rnk4rcy4lknc"]
 
 [ext_resource type="Script" uid="uid://bal5ty5sbmk3v" path="res://Code/level_manager.gd" id="1_af3po"]
 [ext_resource type="PackedScene" uid="uid://ojqkh1fp1khg" path="res://Scenes/player.tscn" id="1_vk57k"]
@@ -20,6 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://dgqq2ldkeiofj" path="res://Textures/space_background_3.png" id="18_6ssoq"]
 [ext_resource type="Script" uid="uid://bqm7jsrvao7l" path="res://Code/volume_slider.gd" id="19_imks0"]
 [ext_resource type="FontFile" uid="uid://cwkqvfv2of37" path="res://Fonts/Tiny5-Regular.ttf" id="20_dlmop"]
+[ext_resource type="AudioStream" uid="uid://df5e34ctywvon" path="res://Audio/main_menu.wav" id="21_imks0"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_7p6j4"]
 normal = Vector2(1, 0)
@@ -457,8 +458,15 @@ grow_vertical = 2
 theme_override_fonts/font = ExtResource("20_dlmop")
 text = "BACK"
 
+[node name="PauseMusicPlayer" type="AudioStreamPlayer" parent="PauseLayer"]
+process_mode = 3
+stream = ExtResource("21_imks0")
+
 [connection signal="body_entered" from="Boundary" to="Spacefrog" method="_on_boundary_body_entered"]
 [connection signal="pressed" from="PauseLayer/PauseMenu/SettingsButton" to="." method="_on_settings_button_pressed"]
 [connection signal="pressed" from="PauseLayer/PauseMenu/Resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="PauseLayer/PauseMenu/MainMenuButton" to="." method="_on_main_menu_button_pressed"]
+[connection signal="drag_ended" from="PauseLayer/SettingsUI/VolumeSlider" to="." method="_on_volume_slider_drag_ended"]
+[connection signal="drag_started" from="PauseLayer/SettingsUI/VolumeSlider" to="." method="_on_volume_slider_drag_started"]
+[connection signal="value_changed" from="PauseLayer/SettingsUI/VolumeSlider" to="." method="_on_volume_slider_value_changed"]
 [connection signal="pressed" from="PauseLayer/SettingsUI/BackButton" to="." method="_on_back_button_pressed"]
