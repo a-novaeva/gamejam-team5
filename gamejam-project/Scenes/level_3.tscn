@@ -183,6 +183,14 @@ position = Vector2(-37, 192)
 [node name="Spaceplatform14" parent="Platforms" instance=ExtResource("3_j77fg")]
 position = Vector2(368, 256)
 
+[node name="Rockplatform15" parent="Platforms" instance=ExtResource("6_kgmqw")]
+position = Vector2(101, 640)
+velocity = Vector2(-75, 0)
+
+[node name="Rockplatform16" parent="Platforms" instance=ExtResource("6_kgmqw")]
+position = Vector2(528, 640)
+velocity = Vector2(-75, 0)
+
 [node name="Boundary" type="Area2D" parent="." groups=["Boundary"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Boundary"]
