@@ -153,27 +153,37 @@ velocity = Vector2(300, 0)
 position = Vector2(569, 256)
 velocity = Vector2(300, 0)
 
-[node name="Spaceplatform7" parent="Platforms" instance=ExtResource("3_j77fg")]
-position = Vector2(542, 192)
-velocity = Vector2(-20, 0)
-
 [node name="Spaceplatform10" parent="Platforms" instance=ExtResource("3_j77fg")]
-position = Vector2(709, 192)
-velocity = Vector2(-20, 0)
+position = Vector2(731, 192)
+velocity = Vector2(20, 0)
 
 [node name="Spaceplatform11" parent="Platforms" instance=ExtResource("3_j77fg")]
+position = Vector2(-113, 192)
+velocity = Vector2(20, 0)
+
+[node name="Spaceplatform33" parent="Platforms" instance=ExtResource("3_j77fg")]
+position = Vector2(0, 192)
+velocity = Vector2(20, 0)
+
+[node name="Spaceplatform32" parent="Platforms" instance=ExtResource("3_j77fg")]
 position = Vector2(114, 192)
-velocity = Vector2(40, 0)
+velocity = Vector2(20, 0)
 
-[node name="Spaceplatform8" parent="Platforms" instance=ExtResource("3_j77fg")]
-position = Vector2(368, 192)
-velocity = Vector2(40, 0)
+[node name="Spaceplatform31" parent="Platforms" instance=ExtResource("3_j77fg")]
+position = Vector2(232, 192)
+velocity = Vector2(20, 0)
 
-[node name="Spaceplatform12" parent="Platforms" instance=ExtResource("3_j77fg")]
-position = Vector2(230, 192)
+[node name="Spaceplatform30" parent="Platforms" instance=ExtResource("3_j77fg")]
+position = Vector2(357, 192)
+velocity = Vector2(20, 0)
 
 [node name="Spaceplatform13" parent="Platforms" instance=ExtResource("3_j77fg")]
-position = Vector2(-37, 192)
+position = Vector2(488, 192)
+velocity = Vector2(20, 0)
+
+[node name="Spaceplatform12" parent="Platforms" instance=ExtResource("3_j77fg")]
+position = Vector2(611, 192)
+velocity = Vector2(20, 0)
 
 [node name="Rockplatform15" parent="Platforms" instance=ExtResource("6_kgmqw")]
 position = Vector2(101, 640)
