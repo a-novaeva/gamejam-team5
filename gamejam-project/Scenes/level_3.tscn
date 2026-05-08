@@ -292,7 +292,7 @@ shape = SubResource("WorldBoundaryShape2D_rybab")
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Boundary"]
 polygon = PackedVector2Array(2, 90, 2, 150, 67, 151, 66, 119, 122, 118, 123, 150, 197, 151, 197, 116, 250, 116, 250, 150, 356, 150, 357, 118, 409, 117, 411, 149, 516, 150, 516, 115, 572, 117, 572, 148, 644, 149, 644, 118, 698, 117, 698, 148, 766, 151, 766, 91)
 
-[node name="Hazards" type="Node2D" parent="."]
+[node name="Hazards" type="Node2D" parent="." groups=["Hazards"]]
 
 [node name="Alus2" parent="Hazards" groups=["Hazards"] instance=ExtResource("7_s80er")]
 position = Vector2(114, 400)
@@ -350,7 +350,7 @@ position = Vector2(10, 656)
 [node name="Satellite3" parent="Hazards" groups=["Hazards"] instance=ExtResource("14_n8e0l")]
 position = Vector2(686, 656)
 
-[node name="Alienship6" parent="Hazards" instance=ExtResource("9_hed5s")]
+[node name="Alienship6" parent="Hazards" groups=["Hazards"] instance=ExtResource("9_hed5s")]
 position = Vector2(733, 297)
 speed = 600.0
 
