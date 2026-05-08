@@ -130,7 +130,7 @@ velocity = Vector2(120, 0)
 
 [node name="Spaceplatform5" parent="Platforms" instance=ExtResource("7_ijtdf")]
 position = Vector2(76, 289)
-velocity = Vector2(0, 0)
+velocity = Vector2(200, 0)
 
 [node name="Rockplatform8" parent="Platforms" instance=ExtResource("6_e2piv")]
 position = Vector2(747, 256)
@@ -161,10 +161,7 @@ position = Vector2(438, 224)
 velocity = Vector2(80, 0)
 
 [node name="Spaceplatform11" parent="Platforms" instance=ExtResource("7_ijtdf")]
-position = Vector2(114, 192)
-
-[node name="Spaceplatform8" parent="Platforms" instance=ExtResource("7_ijtdf")]
-position = Vector2(368, 192)
+position = Vector2(81, 192)
 
 [node name="Spaceplatform14" parent="Platforms" instance=ExtResource("7_ijtdf")]
 position = Vector2(289, 256)
@@ -183,10 +180,10 @@ position = Vector2(98, 256)
 velocity = Vector2(-120, 0)
 
 [node name="1uusispaceplatform5" parent="Platforms" instance=ExtResource("9_i6dbo")]
-position = Vector2(243, 192)
+position = Vector2(248, 192)
 
 [node name="1uusispaceplatform6" parent="Platforms" instance=ExtResource("9_i6dbo")]
-position = Vector2(688, 192)
+position = Vector2(720, 192)
 
 [node name="1uusispaceplatform3" parent="Platforms" instance=ExtResource("9_i6dbo")]
 position = Vector2(635, 576)
@@ -201,7 +198,10 @@ position = Vector2(450, 253)
 velocity = Vector2(-120, 0)
 
 [node name="1Neonlautta2" parent="Platforms" instance=ExtResource("10_e2piv")]
-position = Vector2(538, 192)
+position = Vector2(545, 192)
+
+[node name="1Neonlautta3" parent="Platforms" instance=ExtResource("10_e2piv")]
+position = Vector2(366, 192)
 
 [node name="Boundary" type="Area2D" parent="." groups=["Boundary"]]
 
@@ -299,6 +299,7 @@ tile_map_data = PackedByteArray("AAAAADcAAAAAAAEAAAABADcAAAAAAAEAAAACADcAAAAAAAE
 tile_set = ExtResource("1_v3rpw")
 
 [node name="Background" type="Panel" parent="."]
+visible = false
 modulate = Color(0.2231029, 0.2231029, 0.22310287, 1)
 z_index = -4
 anchors_preset = 15
@@ -326,6 +327,7 @@ collision_layer = 32
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Deadzone2"]
+visible = false
 position = Vector2(387, 225)
 shape = SubResource("RectangleShape2D_vib74")
 
