@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=4 uid="uid://sa5d5bqxuamv"]
+[gd_scene load_steps=30 format=4 uid="uid://sa5d5bqxuamv"]
 
 [ext_resource type="Script" uid="uid://bal5ty5sbmk3v" path="res://Code/level_manager.gd" id="1_hj5x7"]
 [ext_resource type="PackedScene" uid="uid://ojqkh1fp1khg" path="res://Scenes/player.tscn" id="1_q0ycs"]
@@ -18,6 +18,10 @@
 [ext_resource type="Texture2D" uid="uid://doo80gd7xl02b" path="res://Textures/space_background_2.png" id="13_d42f2"]
 [ext_resource type="AudioStream" uid="uid://4c2qh758wq0d" path="res://Audio/level_2.wav" id="13_q0ycs"]
 [ext_resource type="PackedScene" uid="uid://do2cykr6teij6" path="res://Scenes/goal_pod.tscn" id="15_kjoi8"]
+[ext_resource type="FontFile" uid="uid://cwkqvfv2of37" path="res://Fonts/Tiny5-Regular.ttf" id="19_c5xoi"]
+[ext_resource type="Texture2D" uid="uid://dgqq2ldkeiofj" path="res://Textures/space_background_3.png" id="20_sfey3"]
+[ext_resource type="Script" uid="uid://bqm7jsrvao7l" path="res://Code/volume_slider.gd" id="21_4k5rq"]
+[ext_resource type="AudioStream" uid="uid://df5e34ctywvon" path="res://Audio/main_menu.wav" id="22_5jii6"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_nuasi"]
 normal = Vector2(1, 0)
@@ -40,6 +44,18 @@ func _ready() -> void:
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vib74"]
 size = Vector2(768, 125)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_d42f2"]
+texture = ExtResource("20_sfey3")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nx14l"]
+content_margin_top = 3.0
+content_margin_bottom = 3.0
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
 
 [node name="Level2" type="Node"]
 script = ExtResource("1_hj5x7")
@@ -106,11 +122,11 @@ velocity = Vector2(120, 0)
 
 [node name="Spaceplatform3" parent="Platforms" instance=ExtResource("7_ijtdf")]
 position = Vector2(83, 512)
-velocity = Vector2(80, 0)
+velocity = Vector2(120, 0)
 
 [node name="Rockplatform7" parent="Platforms" instance=ExtResource("6_e2piv")]
 position = Vector2(713, 512)
-velocity = Vector2(80, 0)
+velocity = Vector2(120, 0)
 
 [node name="Spaceplatform5" parent="Platforms" instance=ExtResource("7_ijtdf")]
 position = Vector2(76, 289)
@@ -160,7 +176,7 @@ velocity = Vector2(200, 0)
 
 [node name="1uusispaceplatform" parent="Platforms" instance=ExtResource("9_i6dbo")]
 position = Vector2(477, 512)
-velocity = Vector2(80, 0)
+velocity = Vector2(120, 0)
 
 [node name="1uusispaceplatform4" parent="Platforms" instance=ExtResource("9_i6dbo")]
 position = Vector2(98, 256)
@@ -239,6 +255,7 @@ speed = 200.0
 [node name="Alus4" parent="Hazards" groups=["Hazards"] instance=ExtResource("8_c5xoi")]
 position = Vector2(289, 720)
 collision_layer = 8
+speed = -150.0
 
 [node name="Asteroid5" parent="Hazards" groups=["Hazards"] instance=ExtResource("10_4k5rq")]
 position = Vector2(487, 771)
@@ -326,3 +343,120 @@ speed = 200.0
 [node name="Satellite2" parent="." instance=ExtResource("9_sfey3")]
 position = Vector2(550, 848)
 speed = 170.0
+
+[node name="PauseLayer" type="CanvasLayer" parent="."]
+process_mode = 3
+layer = 100
+
+[node name="PauseMenu" type="Control" parent="PauseLayer"]
+process_mode = 3
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SettingsButton" type="Button" parent="PauseLayer/PauseMenu"]
+layout_mode = 0
+offset_left = 349.0
+offset_top = 466.0
+offset_right = 419.0
+offset_bottom = 492.0
+theme_override_fonts/font = ExtResource("19_c5xoi")
+text = "OPTIONS"
+
+[node name="Resume" type="Button" parent="PauseLayer/PauseMenu"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -35.0
+offset_top = -9.0
+offset_right = 35.0
+offset_bottom = 17.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("19_c5xoi")
+text = "RESUME"
+
+[node name="MainMenuButton" type="Button" parent="PauseLayer/PauseMenu"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -45.0
+offset_top = 45.0
+offset_right = 45.0
+offset_bottom = 71.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("19_c5xoi")
+text = "MAIN MENU"
+
+[node name="SettingsUI" type="Panel" parent="PauseLayer"]
+process_mode = 3
+visible = false
+offset_right = 768.0
+offset_bottom = 896.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_d42f2")
+
+[node name="VolumeSlider" type="HSlider" parent="PauseLayer/SettingsUI"]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -125.0
+offset_top = -16.0
+offset_right = 125.0
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/slider = SubResource("StyleBoxFlat_nx14l")
+max_value = 1.0
+step = 0.001
+script = ExtResource("21_4k5rq")
+
+[node name="VolumeLabel" type="Label" parent="PauseLayer/SettingsUI"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -59.0
+offset_top = -38.0
+offset_right = 75.0
+offset_bottom = -15.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("19_c5xoi")
+text = "MASTER VOLUME"
+
+[node name="BackButton" type="Button" parent="PauseLayer/SettingsUI"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -25.0
+offset_top = 18.0
+offset_right = 25.0
+offset_bottom = 49.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("19_c5xoi")
+text = "BACK"
+
+[node name="PauseMusicPlayer" type="AudioStreamPlayer" parent="PauseLayer"]
+process_mode = 3
+stream = ExtResource("22_5jii6")
