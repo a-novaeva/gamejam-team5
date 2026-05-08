@@ -40,7 +40,7 @@ size = Vector2(768, 125)
 [node name="Level3" type="Node"]
 
 [node name="Spacefrog" parent="." instance=ExtResource("1_fxnjf")]
-position = Vector2(384, 873)
+position = Vector2(384, 872)
 collision_mask = 14
 move_speed = 0.15
 
@@ -196,7 +196,7 @@ position = Vector2(512, 576)
 velocity = Vector2(100, 0)
 
 [node name="Rockplatform4" parent="Platforms" instance=ExtResource("6_kgmqw")]
-position = Vector2(161, 578)
+position = Vector2(161, 576)
 velocity = Vector2(100, 0)
 
 [node name="Spaceplatform6" parent="Platforms" instance=ExtResource("4_ki8bc")]
@@ -338,7 +338,7 @@ position = Vector2(10, 656)
 position = Vector2(686, 656)
 
 [node name="Alienship6" parent="Hazards" instance=ExtResource("9_hed5s")]
-position = Vector2(733, 299)
+position = Vector2(733, 297)
 speed = 600.0
 
 [node name="TileMapLayer2" type="TileMapLayer" parent="."]
