@@ -107,21 +107,21 @@ velocity = Vector2(0, 0)
 position = Vector2(15, 544)
 velocity = Vector2(0, 0)
 
-[node name="Rockplatform6" parent="Platforms" instance=ExtResource("6_kgmqw")]
-position = Vector2(373, 544)
-velocity = Vector2(0, 0)
-
 [node name="Spaceplatform3" parent="Platforms" instance=ExtResource("3_j77fg")]
 position = Vector2(59, 512)
-velocity = Vector2(40, 0)
+velocity = Vector2(200, 0)
 
 [node name="Spaceplatform4" parent="Platforms" instance=ExtResource("3_j77fg")]
-position = Vector2(177, 512)
-velocity = Vector2(60, 0)
+position = Vector2(310, 512)
+velocity = Vector2(200, 0)
 
-[node name="Rockplatform7" parent="Platforms" instance=ExtResource("6_kgmqw")]
-position = Vector2(713, 512)
-velocity = Vector2(20, 0)
+[node name="Spaceplatform15" parent="Platforms" instance=ExtResource("3_j77fg")]
+position = Vector2(553, 512)
+velocity = Vector2(200, 0)
+
+[node name="Spaceplatform16" parent="Platforms" instance=ExtResource("3_j77fg")]
+position = Vector2(769, 512)
+velocity = Vector2(200, 0)
 
 [node name="Spaceplatform5" parent="Platforms" instance=ExtResource("3_j77fg")]
 position = Vector2(76, 289)
@@ -190,6 +190,14 @@ velocity = Vector2(-75, 0)
 [node name="Rockplatform16" parent="Platforms" instance=ExtResource("6_kgmqw")]
 position = Vector2(528, 640)
 velocity = Vector2(-75, 0)
+
+[node name="Asteroid" parent="Platforms" instance=ExtResource("8_8jhox")]
+position = Vector2(649, 464)
+speed = -500.0
+
+[node name="Asteroid2" parent="Platforms" instance=ExtResource("8_8jhox")]
+position = Vector2(10, 464)
+speed = -500.0
 
 [node name="Boundary" type="Area2D" parent="." groups=["Boundary"]]
 
