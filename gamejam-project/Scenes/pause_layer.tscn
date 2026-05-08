@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://f3yb0eudplxc"]
+[gd_scene load_steps=8 format=3 uid="uid://f3yb0eudplxc"]
 
 [ext_resource type="FontFile" uid="uid://cwkqvfv2of37" path="res://Fonts/Tiny5-Regular.ttf" id="1_70oss"]
+[ext_resource type="Script" uid="uid://vpibg3wjswt1" path="res://Code/PauseSystem.gd" id="1_dvbpf"]
 [ext_resource type="Texture2D" uid="uid://dgqq2ldkeiofj" path="res://Textures/space_background_3.png" id="2_dvbpf"]
 [ext_resource type="Script" uid="uid://bqm7jsrvao7l" path="res://Code/volume_slider.gd" id="3_lvvid"]
 [ext_resource type="AudioStream" uid="uid://df5e34ctywvon" path="res://Audio/main_menu.wav" id="4_vyh1q"]
@@ -20,6 +21,7 @@ border_color = Color(0, 0, 0, 1)
 [node name="PauseLayer" type="CanvasLayer"]
 process_mode = 3
 layer = 100
+script = ExtResource("1_dvbpf")
 
 [node name="PauseMenu" type="Control" parent="."]
 process_mode = 3
@@ -133,3 +135,11 @@ text = "BACK"
 [node name="PauseMusicPlayer" type="AudioStreamPlayer" parent="."]
 process_mode = 3
 stream = ExtResource("4_vyh1q")
+
+[connection signal="pressed" from="PauseMenu/SettingsButton" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="PauseMenu/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="PauseMenu/MainMenuButton" to="." method="_on_main_menu_button_pressed"]
+[connection signal="drag_ended" from="SettingsUI/VolumeSlider" to="." method="_on_volume_slider_drag_ended"]
+[connection signal="drag_started" from="SettingsUI/VolumeSlider" to="." method="_on_volume_slider_drag_started"]
+[connection signal="value_changed" from="SettingsUI/VolumeSlider" to="." method="_on_volume_slider_value_changed"]
+[connection signal="pressed" from="SettingsUI/BackButton" to="." method="_on_back_button_pressed"]
