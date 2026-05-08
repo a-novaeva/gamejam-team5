@@ -330,3 +330,5 @@ position = Vector2(544, 138)
 position = Vector2(673, 138)
 
 [node name="PauseLayer" parent="." instance=ExtResource("19_i6dbo")]
+
+[connection signal="body_entered" from="Boundary" to="Spacefrog" method="_on_boundary_body_entered"]

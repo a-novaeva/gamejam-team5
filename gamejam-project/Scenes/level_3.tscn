@@ -319,3 +319,5 @@ position = Vector2(544, 138)
 
 [node name="GoalPod5" parent="." instance=ExtResource("13_gmj2a")]
 position = Vector2(673, 138)
+
+[connection signal="body_entered" from="Boundary" to="Spacefrog" method="_on_boundary_body_entered"]
