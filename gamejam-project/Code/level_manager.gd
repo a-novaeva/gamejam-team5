@@ -63,5 +63,5 @@ func _on_volume_slider_drag_started() -> void:
 	$PauseLayer/PauseMusicPlayer.play()
 
 
-func _on_volume_slider_drag_ended(value_changed: bool) -> void:
+func _on_volume_slider_drag_ended(_value_changed: bool) -> void:
 	$PauseLayer/PauseMusicPlayer.stop()
