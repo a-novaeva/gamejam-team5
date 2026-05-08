@@ -1,10 +1,9 @@
-[gd_scene load_steps=20 format=4 uid="uid://bkxd7ckb52yl3"]
+[gd_scene load_steps=19 format=4 uid="uid://bkxd7ckb52yl3"]
 
 [ext_resource type="PackedScene" uid="uid://ojqkh1fp1khg" path="res://Scenes/player.tscn" id="1_fxnjf"]
 [ext_resource type="PackedScene" uid="uid://ce00nxxafuxd3" path="res://Scenes/Platforms/1rockplatform.tscn" id="2_xjeco"]
 [ext_resource type="PackedScene" uid="uid://d3uepg51rpi4n" path="res://Scenes/Platforms/spaceplatform3.tscn" id="3_j77fg"]
 [ext_resource type="PackedScene" uid="uid://c4adfc375gsua" path="res://Scenes/Platforms/2spaceplatform.tscn" id="4_ki8bc"]
-[ext_resource type="PackedScene" uid="uid://dl068ln6uf7sb" path="res://Scenes/Platforms/3rockplatform.tscn" id="5_nbwsh"]
 [ext_resource type="PackedScene" uid="uid://cv7is67ldkv2j" path="res://Scenes/Platforms/2rockplatform.tscn" id="6_kgmqw"]
 [ext_resource type="PackedScene" uid="uid://b6rvjrl3v45wp" path="res://Scenes/Hazards/alus.tscn" id="7_s80er"]
 [ext_resource type="PackedScene" uid="uid://c1k6ulwokgefx" path="res://Scenes/Hazards/asteroid.tscn" id="8_8jhox"]
@@ -83,21 +82,11 @@ velocity = Vector2(250, 0)
 position = Vector2(192, 608)
 velocity = Vector2(180, 0)
 
-[node name="Rockplatform3" parent="Platforms" instance=ExtResource("5_nbwsh")]
-position = Vector2(130, 576)
-velocity = Vector2(30, 0)
-
 [node name="Spaceplatform2" parent="Platforms" instance=ExtResource("4_ki8bc")]
-position = Vector2(506, 576)
-velocity = Vector2(-80, 0)
+position = Vector2(695, 576)
 
 [node name="Spaceplatform9" parent="Platforms" instance=ExtResource("4_ki8bc")]
 position = Vector2(341, 576)
-velocity = Vector2(-50, 0)
-
-[node name="Rockplatform4" parent="Platforms" instance=ExtResource("5_nbwsh")]
-position = Vector2(777, 576)
-velocity = Vector2(-20, 0)
 
 [node name="Rockplatform2" parent="Platforms" instance=ExtResource("6_kgmqw")]
 position = Vector2(725, 544)
@@ -191,13 +180,21 @@ velocity = Vector2(-75, 0)
 position = Vector2(528, 640)
 velocity = Vector2(-75, 0)
 
-[node name="Asteroid" parent="Platforms" instance=ExtResource("8_8jhox")]
+[node name="Asteroid" parent="Platforms" groups=["Hazards"] instance=ExtResource("8_8jhox")]
 position = Vector2(649, 464)
 speed = -500.0
 
-[node name="Asteroid2" parent="Platforms" instance=ExtResource("8_8jhox")]
+[node name="Asteroid2" parent="Platforms" groups=["Hazards"] instance=ExtResource("8_8jhox")]
 position = Vector2(10, 464)
 speed = -500.0
+
+[node name="Rockplatform3" parent="Platforms" instance=ExtResource("6_kgmqw")]
+position = Vector2(512, 576)
+velocity = Vector2(100, 0)
+
+[node name="Rockplatform4" parent="Platforms" instance=ExtResource("6_kgmqw")]
+position = Vector2(161, 578)
+velocity = Vector2(100, 0)
 
 [node name="Boundary" type="Area2D" parent="." groups=["Boundary"]]
 
@@ -319,3 +316,7 @@ position = Vector2(544, 138)
 
 [node name="GoalPod5" parent="." instance=ExtResource("13_gmj2a")]
 position = Vector2(673, 138)
+
+[node name="Alienship" parent="." instance=ExtResource("9_hed5s")]
+position = Vector2(708, 304)
+speed = -600.0
