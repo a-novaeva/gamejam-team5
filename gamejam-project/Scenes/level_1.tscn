@@ -17,7 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://dl068ln6uf7sb" path="res://Scenes/Platforms/3rockplatform.tscn" id="14_6ioyp"]
 [ext_resource type="AudioStream" uid="uid://tnb6e8hdtux2" path="res://Audio/level_1.wav" id="14_oovug"]
 [ext_resource type="PackedScene" uid="uid://cak2uxe27h22n" path="res://Scenes/Platforms/2uusispaceplatform.tscn" id="16_8i23i"]
-[ext_resource type="PackedScene" path="res://Scenes/pause_layer.tscn" id="18_pjppf"]
+[ext_resource type="PackedScene" uid="uid://f3yb0eudplxc" path="res://Scenes/pause_layer.tscn" id="18_pjppf"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_7p6j4"]
 normal = Vector2(1, 0)
