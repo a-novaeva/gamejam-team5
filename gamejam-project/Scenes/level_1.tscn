@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=4 uid="uid://rnk4rcy4lknc"]
+[gd_scene load_steps=28 format=4 uid="uid://rnk4rcy4lknc"]
 
 [ext_resource type="Script" uid="uid://bal5ty5sbmk3v" path="res://Code/level_manager.gd" id="1_af3po"]
 [ext_resource type="PackedScene" uid="uid://ojqkh1fp1khg" path="res://Scenes/player.tscn" id="1_vk57k"]
@@ -17,6 +17,9 @@
 [ext_resource type="PackedScene" uid="uid://dl068ln6uf7sb" path="res://Scenes/Platforms/3rockplatform.tscn" id="14_6ioyp"]
 [ext_resource type="AudioStream" uid="uid://tnb6e8hdtux2" path="res://Audio/level_1.wav" id="14_oovug"]
 [ext_resource type="PackedScene" uid="uid://cak2uxe27h22n" path="res://Scenes/Platforms/2uusispaceplatform.tscn" id="16_8i23i"]
+[ext_resource type="Texture2D" uid="uid://dgqq2ldkeiofj" path="res://Textures/space_background_3.png" id="18_6ssoq"]
+[ext_resource type="Script" uid="uid://bqm7jsrvao7l" path="res://Code/volume_slider.gd" id="19_imks0"]
+[ext_resource type="FontFile" uid="uid://cwkqvfv2of37" path="res://Fonts/Tiny5-Regular.ttf" id="20_dlmop"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_7p6j4"]
 normal = Vector2(1, 0)
@@ -39,6 +42,18 @@ func _ready() -> void:
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wrinw"]
 size = Vector2(768, 122.5)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_sda17"]
+texture = ExtResource("18_6ssoq")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1fal7"]
+content_margin_top = 3.0
+content_margin_bottom = 3.0
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
 
 [node name="Level1" type="Node"]
 script = ExtResource("1_af3po")
@@ -329,4 +344,121 @@ position = Vector2(673, 138)
 position = Vector2(617, 336)
 speed = 50.0
 
+[node name="PauseLayer" type="CanvasLayer" parent="."]
+process_mode = 3
+layer = 100
+
+[node name="PauseMenu" type="Control" parent="PauseLayer"]
+process_mode = 3
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SettingsButton" type="Button" parent="PauseLayer/PauseMenu"]
+layout_mode = 0
+offset_left = 349.0
+offset_top = 466.0
+offset_right = 419.0
+offset_bottom = 492.0
+theme_override_fonts/font = ExtResource("20_dlmop")
+text = "OPTIONS"
+
+[node name="Resume" type="Button" parent="PauseLayer/PauseMenu"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -35.0
+offset_top = -9.0
+offset_right = 35.0
+offset_bottom = 17.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("20_dlmop")
+text = "RESUME"
+
+[node name="MainMenuButton" type="Button" parent="PauseLayer/PauseMenu"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -45.0
+offset_top = 45.0
+offset_right = 45.0
+offset_bottom = 71.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("20_dlmop")
+text = "MAIN MENU"
+
+[node name="SettingsUI" type="Panel" parent="PauseLayer"]
+process_mode = 3
+visible = false
+offset_right = 768.0
+offset_bottom = 896.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_sda17")
+
+[node name="VolumeSlider" type="HSlider" parent="PauseLayer/SettingsUI"]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -125.0
+offset_top = -16.0
+offset_right = 125.0
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/slider = SubResource("StyleBoxFlat_1fal7")
+max_value = 1.0
+step = 0.001
+script = ExtResource("19_imks0")
+
+[node name="VolumeLabel" type="Label" parent="PauseLayer/SettingsUI"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -59.0
+offset_top = -38.0
+offset_right = 75.0
+offset_bottom = -15.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("20_dlmop")
+text = "MASTER VOLUME"
+
+[node name="BackButton" type="Button" parent="PauseLayer/SettingsUI"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -25.0
+offset_top = 18.0
+offset_right = 25.0
+offset_bottom = 49.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("20_dlmop")
+text = "BACK"
+
 [connection signal="body_entered" from="Boundary" to="Spacefrog" method="_on_boundary_body_entered"]
+[connection signal="pressed" from="PauseLayer/PauseMenu/SettingsButton" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="PauseLayer/PauseMenu/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="PauseLayer/PauseMenu/MainMenuButton" to="." method="_on_main_menu_button_pressed"]
+[connection signal="pressed" from="PauseLayer/SettingsUI/BackButton" to="." method="_on_back_button_pressed"]

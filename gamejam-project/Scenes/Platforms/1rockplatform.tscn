@@ -7,6 +7,7 @@
 size = Vector2(31, 11)
 
 [node name="Rockplatform1" type="Area2D"]
+z_index = -1
 collision_layer = 4
 script = ExtResource("2_eumtx")
 

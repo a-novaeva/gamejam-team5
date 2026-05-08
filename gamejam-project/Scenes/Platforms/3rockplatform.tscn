@@ -7,6 +7,7 @@
 size = Vector2(93, 12)
 
 [node name="Rockplatform3" type="Area2D"]
+z_index = -1
 collision_layer = 4
 script = ExtResource("1_bv66a")
 

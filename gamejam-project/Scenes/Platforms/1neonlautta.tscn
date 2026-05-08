@@ -7,6 +7,7 @@
 size = Vector2(59, 16)
 
 [node name="1Neonlautta" type="Area2D"]
+z_index = -1
 collision_layer = 4
 script = ExtResource("1_aeolg")
 
