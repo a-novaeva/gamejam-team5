@@ -2,15 +2,11 @@ extends Control
 
 var current_score : int = 999
 
-# @onready finds the nodes in the scene after it loads
 @onready var score_label = $ScoreLabel
 @onready var score_timer = $ScoreTimer
 
 func _ready():
-	# Display the initial score immediately
 	update_score_display()
-	$ScoreLabel.text = "Final Score: " + str(GameManager.final_score)
-	# Connects the timer's signal via code so it triggers the function below
 	if not score_timer.timeout.is_connected(_on_score_timer_timeout):
 		score_timer.timeout.connect(_on_score_timer_timeout)
 
@@ -34,4 +30,5 @@ func start_scoring():
 
 func trigger_game_over():
 	score_timer.stop()
+	$ScoreLabel.text = "Final Score: " + str(GameManager.final_score)
 	print("Game Over! Score reached 0.")
