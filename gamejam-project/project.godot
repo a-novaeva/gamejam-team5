@@ -14,6 +14,7 @@ config/name="Astro Hop"
 run/main_scene="uid://dcrohjt8innnw"
 config/features=PackedStringArray("4.5", "Mobile")
 config/icon="res://icon.svg"
+config/windows_native_icon="res://favicon.ico"
 
 [autoload]
 
@@ -24,6 +25,10 @@ GameManager="*res://Code/GameManager.gd"
 
 window/size/viewport_width=768
 window/size/viewport_height=896
+window/size/resizable=false
+window/size/window_width_override=768
+window/size/window_height_override=896
+window/stretch/mode="canvas_items"
 
 [input]
 
